@@ -1,0 +1,31 @@
+h1 Listing designs
+
+table
+  thead
+    tr
+      th Title
+      th Price
+      th Description
+      th Tutorial url
+      th Shape
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @designs.each do |design|
+      tr
+        td = design.title
+        td = design.price
+        td = design.description
+        td = design.tutorial_url
+        td = design.shape_id
+        td = design.user_id
+        td = link_to 'Show', design
+        td = link_to 'Edit', edit_design_path(design)
+        td = link_to 'Destroy', design, method: :delete, data: { confirm: 'Are you sure?' }
+
+br
+
+= link_to('New Design', new_design_path)

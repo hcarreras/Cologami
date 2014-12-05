@@ -1,0 +1,29 @@
+p#notice= notice
+
+p
+  strong Title:
+  = @design.title
+
+p
+  strong Price:
+  = @design.price
+
+p
+  strong Description:
+  = @design.description
+
+p
+  strong Tutorial url:
+  = @design.tutorial_url
+
+p
+  strong Shape:
+  = @design.shape_id
+
+p
+  strong User:
+  = @design.user_id
+
+= link_to 'Edit', edit_design_path(@design)
+| |
+= link_to 'Back', designs_path

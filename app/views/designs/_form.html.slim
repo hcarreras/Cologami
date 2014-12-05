@@ -1,0 +1,35 @@
+= form_for(@design) do |f|
+  - if @design.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@design.errors.count, "error")
+        | prohibited this design from being saved:
+      ul
+        - @design.errors.full_messages.each do |msg|
+          li= msg
+  .field
+    = f.label :title
+    br
+      = f.text_field :title
+  .field
+    = f.label :price
+    br
+      = f.text_field :price
+  .field
+    = f.label :description
+    br
+      = f.text_area :description
+  .field
+    = f.label :tutorial_url
+    br
+      = f.text_field :tutorial_url
+  .field
+    = f.label :shape_id
+    br
+      = f.number_field :shape_id
+  .field
+    = f.label :user_id
+    br
+      = f.number_field :user_id
+  .actions
+    = f.submit

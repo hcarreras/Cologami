@@ -6,9 +6,6 @@ gem 'rails', '4.0.12'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -24,8 +21,16 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-gem 'slim'
+gem 'slim-rails'
 gem 'inherited_resources'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'sass', '~> 3.2.19'
+gem 'sass-rails', '~> 4.0.2'
+gem 'autoprefixer-rails'
+
+gem 'carrierwave'
+gem 'simple_form'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

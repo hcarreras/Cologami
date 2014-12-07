@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205220036) do
+ActiveRecord::Schema.define(version: 20141206174003) do
+
+  create_table "design_images", force: true do |t|
+    t.string  "file"
+    t.integer "design_id"
+  end
 
   create_table "designs", force: true do |t|
     t.string   "title"

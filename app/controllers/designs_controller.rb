@@ -1,8 +1,7 @@
 class DesignsController < InheritedResources::Base
-
   def new
     @design = Design.new
-    @design_images =  @design.images.build
+    @design_images = @design.images.build
     new!
   end
 
@@ -11,8 +10,10 @@ class DesignsController < InheritedResources::Base
 
     respond_to do |format|
       if @design.save
-        params[:images]['file'].each do |a|
-          @design_image = @design.images.create!(file: a, design_id: @design.id)
+        if params[:image]
+          params[:images]['file'].each do |a|
+            @design_image = @design.images.create!(file: a, design_id: @design.id)
+          end
         end
         format.html { redirect_to @design, notice: 'Design was successfully created.' }
       else

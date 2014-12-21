@@ -30,7 +30,8 @@ gem 'autoprefixer-rails'
 
 gem 'carrierwave'
 gem 'simple_form'
-
+gem "rake"
+gem 'devise'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -41,10 +42,17 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'pry'
 end
+group :test do
+  gem 'capybara'
+  gem "launchy"
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

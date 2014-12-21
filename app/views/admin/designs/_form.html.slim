@@ -6,7 +6,7 @@
       - @design.errors.full_messages.each do |msg|
         li= msg
 
-= form_for @design, :html => { :class => "form-horizontal" } do |f|
+= form_for [:admin, @design], :html => { :class => "form-horizontal" } do |f|
   .control-group
     = f.label :title, :class => 'control-label'
     .controls
@@ -33,11 +33,10 @@
       = f.text_field :user_id, :class => 'text_field'
   = f.fields_for :design_images do |p|
     .controls-group
-      = p.label :file
-        .controls
-          = p.file_field :file, :multiple => true, name: "images[file][]"
+      .controls
+        = p.file_field :file, :multiple => true, name: "images[file][]"
 
   .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
+    = f.submit "Save", :class => 'btn btn-primary'
     '
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), designs_path, :class => 'btn'
+    = link_to 'Cancel', admin_designs_path, :class => 'btn'

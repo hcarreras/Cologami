@@ -1,5 +1,10 @@
 Harigami::Application.routes.draw do
-  resources :designs
+  namespace :admin do
+    resources :designs
+  end
+  resources :designs, only: :show
+
+  root to: 'admin/designs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

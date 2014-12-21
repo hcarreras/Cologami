@@ -7,6 +7,7 @@ require 'factory_girl_rails'
 require 'pry'
 require 'database_cleaner'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+include Warden::Test::Helpers
 
 
 RSpec.configure do |config|

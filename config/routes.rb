@@ -5,7 +5,9 @@ Harigami::Application.routes.draw do
   end
   resources :designs, only: :show
 
-  root to: 'admin/designs#index'
+  root to: "static#index"
+
+  get "admin" => "admin/designs#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

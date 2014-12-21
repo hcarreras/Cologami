@@ -1,7 +1,14 @@
 require 'spec_helper'
 
 feature 'designs' do
-  before(:each) { visit admin_designs_path}
+
+  given!(:admin) { create :user_admin }
+
+  before(:each) do
+    login_as admin
+    visit admin_designs_path
+  end
+
   feature 'creating a new design' do
     scenario "proper params are filled" do
       click_on "New"

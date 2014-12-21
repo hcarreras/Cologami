@@ -1,4 +1,5 @@
-class Admin::DesignsController < InheritedResources::Base
+class Admin::DesignsController < Admin::AdminController
+  inherit_resources
   actions :all, :except => [:show]
 
   def new

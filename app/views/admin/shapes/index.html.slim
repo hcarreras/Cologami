@@ -1,0 +1,28 @@
+div class="page-header"
+  h1 Shapes and Designs
+- @shapes.each do |shape|
+  .panel.panel-default
+    .panel-heading= link_to shape.title.titleize, edit_admin_shape_path(shape)
+    .panel-body
+      table class="table table-striped"
+        thead
+          tr
+            th Title
+            th Price
+            th Description
+            th Actions
+        tbody
+          - shape.designs.each do |design|
+            tr
+              td= design.title
+              td= design.price
+              td= design.description
+              td
+                = link_to 'Edit', edit_admin_design_path(design), :class => 'btn btn-mini'
+                '
+                = link_to 'Destroy', admin_design_path(design), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+      p
+        = link_to "New Design", new_admin_design_path(shape_id: shape), :class => 'btn btn-primary'
+p
+  = link_to "New Shape", new_admin_shape_path, :class => 'btn btn-primary'
+

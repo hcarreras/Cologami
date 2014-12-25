@@ -19,18 +19,7 @@
     = f.label :description, :class => 'control-label'
     .controls
       = f.text_field :description, :class => 'text_field'
-  .control-group
-    = f.label :tutorial_url, :class => 'control-label'
-    .controls
-      = f.text_field :tutorial_url, :class => 'text_field'
-  .control-group
-    = f.label :shape_id, :class => 'control-label'
-    .controls
-      = f.text_field :shape_id, :class => 'text_field'
-  .control-group
-    = f.label :user_id, :class => 'control-label'
-    .controls
-      = f.text_field :user_id, :class => 'text_field'
+    = f.hidden_field :shape_id, :class => 'text_field'
   = f.fields_for :design_images do |p|
     .controls-group
       .controls

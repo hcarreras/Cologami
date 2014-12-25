@@ -1,13 +1,14 @@
 Harigami::Application.routes.draw do
   devise_for :users
   namespace :admin do
-    resources :designs
+    resources :designs, except: [:index, :show]
+    resources :shapes, except: :show
   end
-  resources :designs, only: :show
+  resources :designs, only: [:show, :index]
 
   root to: "static#index"
 
-  get "admin" => "admin/designs#index"
+  get "admin" => "admin/shapes#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141221181601) do
+ActiveRecord::Schema.define(version: 20141223130940) do
 
   create_table "design_images", force: true do |t|
     t.string  "file"
@@ -22,9 +22,15 @@ ActiveRecord::Schema.define(version: 20141221181601) do
     t.string   "title"
     t.float    "price"
     t.text     "description"
-    t.string   "tutorial_url"
     t.integer  "shape_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shapes", force: true do |t|
+    t.string   "title"
+    t.string   "tutorial_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

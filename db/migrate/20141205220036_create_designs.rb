@@ -4,7 +4,6 @@ class CreateDesigns < ActiveRecord::Migration
       t.string :title
       t.float :price
       t.text :description
-      t.string :tutorial_url
       t.integer :shape_id
       t.integer :user_id
 

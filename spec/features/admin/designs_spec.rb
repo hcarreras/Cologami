@@ -1,27 +1,26 @@
 require 'spec_helper'
 
 feature 'designs' do
-
-  given!(:admin) { create :user_admin }
-
-  before(:each) do
-    login_as admin
-    visit admin_designs_path
-  end
-
   feature 'creating a new design' do
+    given!(:admin) { create :user_admin }
+    given!(:shape) {create :shape}
+
+    before(:each) do
+      login_as admin
+      visit admin_shapes_path
+    end
+
     scenario "proper params are filled" do
-      click_on "New"
+      click_on "New Design"
       fill_in 'Title', with: "Ninja Crane"
       fill_in 'Price', with: 2.99
       fill_in 'Description', with: 'This crane will spy your kids while they play with it.'
-      fill_in 'Tutorial url', with: 'http://www.example.es/how-to-fold-your-ninja-crane'
       click_on 'Save'
       expect(page).to have_content "Design was successfully created."
     end
 
     scenario "at least a necessary param is not provided" do
-      click_on "New"
+      click_on "New Design"
       fill_in 'Title', with: "Ninja Crane"
       click_on 'Save'
       expect(page).to have_content "Price can't be blank"
@@ -29,7 +28,7 @@ feature 'designs' do
 
     feature "with one images" do
       scenario "both images are properly created" do
-        click_on "New"
+        click_on "New Design"
         fill_in 'Title', with: "Ninja Crane"
         fill_in 'Price', with: 2.99
         attach_file 'images[file][]', File.join(Rails.root,'spec/support/images/ninja_crane.jpg')
@@ -43,8 +42,13 @@ feature 'designs' do
   end
 
   feature 'editing designs' do
-    given!(:design){ create(:design)}
-    before(:each) { visit admin_designs_path}
+    given!(:shape_with_design){ create(:shape_with_design)}
+    given!(:admin) { create :user_admin }
+
+    before(:each) do
+      login_as admin
+      visit admin_shapes_path
+    end
 
     scenario "from the designs index" do
       click_on "Edit"

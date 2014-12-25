@@ -1,9 +1,10 @@
 class Admin::DesignsController < Admin::AdminController
   inherit_resources
-  actions :all, :except => [:show]
+  actions :all, :except => [:index, :show]
 
   def new
     @design = Design.new
+    @design.shape_id = params[:shape_id]
     @design_images = @design.images.build
     new!
   end
@@ -18,7 +19,7 @@ class Admin::DesignsController < Admin::AdminController
             @design_image = @design.images.create!(file: a, design_id: @design.id)
           end
         end
-        format.html { redirect_to admin_designs_path, notice: 'Design was successfully created.' }
+        format.html { redirect_to admin_shapes_path, notice: 'Design was successfully created.' }
       else
         format.html { render action: 'new' }
       end
@@ -36,7 +37,7 @@ class Admin::DesignsController < Admin::AdminController
             @design.images.create!(file: a, design_id: @design.id)
           end
         end
-        format.html { redirect_to admin_designs_path, notice: 'Design was successfully updated.' }
+        format.html { redirect_to admin_shapes_path, notice: 'Design was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

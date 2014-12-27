@@ -10,13 +10,17 @@ div class="page-header"
             th Title
             th Price
             th Description
+            th images
             th Actions
         tbody
           - shape.designs.each do |design|
             tr
-              td= design.title
+              td= link_to design.title, design_path(design)
               td= design.price
               td= design.description
+              td
+                - design.images.each do |image|
+                  = image_tag(image.file_url(:thumb))
               td
                 = link_to 'Edit', edit_admin_design_path(design), :class => 'btn btn-mini'
                 '

@@ -5,4 +5,5 @@ class Design < ActiveRecord::Base
   accepts_nested_attributes_for :shape
 
   validates_presence_of :title, :price
+  validates :title, uniqueness: { scope: :shape}
 end

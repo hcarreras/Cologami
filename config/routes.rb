@@ -5,6 +5,7 @@ Harigami::Application.routes.draw do
     resources :shapes, except: :show
   end
   resources :designs, only: [:show, :index]
+  resources :line_items, only: [:create, :destroy]
 
   root to: "static#index"
 

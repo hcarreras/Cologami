@@ -6,5 +6,16 @@ FactoryGirl.define do
     after(:create) do |design, _|
       create_list(:design_image, 1, design: design)
     end
+    association :shape
+  end
+
+  factory :second_design, class: "Design" do
+    title "princess Crane"
+    price 3.15
+    description "This pink crane is simply beautiful"
+    after(:create) do |design, _|
+      create_list(:design_image, 3, design: design)
+    end
+    association :shape
   end
 end

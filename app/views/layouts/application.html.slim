@@ -6,19 +6,24 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
+    nav.navbar.navbar-default
+      .collapse.navbar-collapse
+        - if user_signed_in?
+          = "Welcome #{current_user.email} "
+          = link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete
+        - else
+          p
+            | You are not signed in.
+            = link_to 'Login', new_user_session_path
+            | |
+            = link_to 'Sign Up', new_user_registration_path
+        .nav.navbar-nav.navbar-right
+          span.glyphicon.glyphicon-shopping-cart aria-hidden="true"
+          = cart_amount
+
     .container
       - flash.each do |key, value|
         div class="#{flash_class(key)}"
           a.close data-dismiss="alert" ×
           = value
-
-    - if user_signed_in?
-      = "Welcome #{current_user.email} "
-      = link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete
-    - else
-      p
-        | You are not signed in.
-        = link_to 'Login', new_user_session_path
-        | |
-        = link_to 'Sign Up', new_user_registration_path
     = yield

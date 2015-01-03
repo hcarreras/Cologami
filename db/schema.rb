@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223130940) do
+ActiveRecord::Schema.define(version: 20141227174835) do
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "design_images", force: true do |t|
     t.string  "file"
@@ -24,6 +29,14 @@ ActiveRecord::Schema.define(version: 20141223130940) do
     t.text     "description"
     t.integer  "shape_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "design_id"
+    t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

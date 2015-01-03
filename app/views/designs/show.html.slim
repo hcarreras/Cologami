@@ -1,10 +1,11 @@
 - model_class = Design
 .panel-default
   .panel-body
-    .row
-      .col-md-10.col-md-offset-1
-        .embed-responsive.embed-responsive-16by9
-          iframe.embed-responsive-item src="#{@design.shape.tutorial_url.sub!('watch?v=', 'embed/')}"
+    - if @design.shape.tutorial_url.present?
+      .row
+        .col-md-10.col-md-offset-1
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item src="#{@design.shape.tutorial_url.sub!('watch?v=', 'embed/')}"
     .row
       .col-md-7
         #design_images
@@ -34,6 +35,4 @@
           = @design.description
 
         p
-          button.btn.btn-lg.btn-success
-            = @design.price
-            |  Añadir al carrito
+          = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-lg btn-success"

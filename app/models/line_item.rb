@@ -1,5 +1,5 @@
 class LineItem < ActiveRecord::Base
-  belongs_to :product
+  belongs_to :design
   belongs_to :cart
   validate :unique_per_cart
 

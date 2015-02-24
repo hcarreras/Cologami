@@ -13,7 +13,7 @@ class Admin::DesignsController < Admin::AdminController
     @design = Design.new(design_params)
 
     respond_to do |format|
-      if @design.save!
+      if @design.save
         if params[:images]
           params[:images]['file'].each do |a|
             @design_image = @design.images.create!(file: a, design_id: @design.id)

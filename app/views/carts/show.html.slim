@@ -1,0 +1,13 @@
+.panel-default
+  .panel-body
+    table.table
+      tbody
+        - resource.line_items.each do |line_item|
+          td= image_tag line_item.design.images.first.file_url(:thumb)
+          td= line_item.design.title
+          td= line_item.design.price
+          td= button_to line_item_path(line_item), id: "delete-#{line_item.id}" , method: :delete do
+            span.glyphicon.glyphicon-remove aria-hidden="true"
+
+  .btn.btn-lg.btn-default= link_to "Seguir Comprando", root_url
+  .btn.btn-lg.btn-primary= link_to "Proceder al pago", new_order_url

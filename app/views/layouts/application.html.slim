@@ -19,7 +19,7 @@ html
             = link_to 'Sign Up', new_user_registration_path
         .nav.navbar-nav.navbar-right
           span.glyphicon.glyphicon-shopping-cart aria-hidden="true"
-          = cart_amount
+          = link_to cart_amount, current_cart
 
     .container
       - flash.each do |key, value|

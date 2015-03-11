@@ -1,0 +1,17 @@
+h1 Purchases
+table.table.table-hover
+  thead
+    tr
+      th Id
+      th User
+      th Designs
+      th Date
+    tbody
+      - @purchases.each do |purchase|
+        tr
+          td= purchase.id
+          td= purchase.user.email
+          td
+            - purchase.cart.line_items.each do |li|
+              =link_to li.design.id, design_path(li.design)
+          td= purchase.created_at.strftime('%d-%m-%Y')

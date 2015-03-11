@@ -45,7 +45,7 @@ feature 'cart' do
     end
   end
 
-  feature "controlling the cart" do
+  feature "managing the cart" do
     given!(:user) { create :user}
     given!(:cart_with_design) { create :cart_with_design}
 

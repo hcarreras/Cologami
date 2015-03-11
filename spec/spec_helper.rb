@@ -6,9 +6,12 @@ require 'capybara/rspec'
 require 'factory_girl_rails'
 require 'pry'
 require 'database_cleaner'
+require 'capybara/poltergeist'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 include Warden::Test::Helpers
+Warden.test_mode!
 
+Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

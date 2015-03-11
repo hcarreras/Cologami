@@ -1,0 +1,5 @@
+.panel.panel-default
+  .panel-heading Pago de la compra
+  .panel-body
+    = simple_form_for @purchase, html: {class: "form form-vertical"} do |f|
+      = f.button :submit, "Pagar ahora", class: "btn btn-primary"

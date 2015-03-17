@@ -1,5 +1,5 @@
 Harigami::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
   namespace :admin do
     resources :designs, except: [:index, :show]
     resources :shapes, except: :show

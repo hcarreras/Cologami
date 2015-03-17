@@ -34,5 +34,6 @@
         p
           = @design.description
 
-        p
-          = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-lg btn-success"
+        -unless current_user.has_design?(@design)
+          p
+            = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-lg btn-success"

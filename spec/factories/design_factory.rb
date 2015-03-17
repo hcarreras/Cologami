@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :design, class: "Design" do
-    title "Ninja Crane"
+    sequence :title do |n|
+      "Ninja Crane #{n}"
+    end
     price 2.98
     description "The traditional crane and the traditional ninja mixed together could just have this amazing result."
     after(:create) do |design, _|

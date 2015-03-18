@@ -13,6 +13,7 @@ div class="page-header"
             th images
             th Actions
         tbody
+
           - shape.designs.each do |design|
             tr
               td= link_to design.title, design_path(design)

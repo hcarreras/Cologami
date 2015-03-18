@@ -6,26 +6,29 @@
       - @design.errors.full_messages.each do |msg|
         li= msg
 .col-sm-10
-  = form_for [:admin, @design], :html => { :class => "form-horizontal" } do |f|
+  = form_for [:admin, @design], html: { multipart: true, class: "form-horizontal" } do |f|
     .form-group
-      = f.label :title, :class => 'control-label'
+      = f.label :title, class: 'control-label'
       .controls
-        = f.text_field :title, :class => 'text_field'
+        = f.text_field :title, class: 'text_field'
     .form-group
-      = f.label :price, :class => 'control-label'
+      = f.label :price, class: 'control-label'
       .controls
-        = f.text_field :price, :class => 'text_field'
+        = f.text_field :price, class: 'text_field'
     .form-group
-      = f.label :description, :class => 'control-label'
+      = f.label :description, class: 'control-label'
       .controls
-        = f.text_area :description, :class => 'form-control', :rows => 3
-      = f.hidden_field :shape_id, :class => 'text_field'
+        = f.text_area :description, class: 'form-control', rows: 3
+      = f.hidden_field :shape_id, class: 'text_field'
+    = f.label :images, class: 'control-label'
     = f.fields_for :design_images do |p|
       .controls-group
         .controls
-          = p.file_field :file, :multiple => true, name: "images[file][]"
+          = p.file_field :file, multiple: true, name: "images[file][]"
+    = f.label :sheet, class: 'control-label'
+    = f.file_field :sheet
 
     .form-actions
-      = f.submit "Save", :class => 'btn btn-primary'
+      = f.submit "Save", class: 'btn btn-primary'
       '
-      = link_to 'Cancel', admin_designs_path, :class => 'btn'
+      = link_to 'Cancel', admin_designs_path, class: 'btn'

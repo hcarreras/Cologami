@@ -10,5 +10,9 @@ feature 'purchases' do
       visit admin_purchases_path
     end
 
+    scenario "sees its purchase" do
+      expect(page).to have_text("Purchases")
+      expect(page).to have_text("user@example.com")
+    end
   end
 end

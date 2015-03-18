@@ -34,6 +34,9 @@
         p
           = @design.description
 
-        -unless current_user.has_design?(@design)
+        - unless current_user && current_user.has_design?(@design)
           p
             = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-lg btn-success"
+
+        - if current_user && current_user.has_design?(@design)
+          p= link_to "Download Sheet", @design.sheet_url, class: "btn btn-default btn-primary"

@@ -30,7 +30,7 @@ class Admin::DesignsController < Admin::AdminController
     @design = Design.find(params[:id])
 
     respond_to do |format|
-      if @design.update_attributes(params[:design_params])
+      if @design.update_attributes(design_params)
         if params[:images]
           params[:images]['file'].each do |a|
             @design.images.delete_all
@@ -46,7 +46,7 @@ class Admin::DesignsController < Admin::AdminController
   private
 
   def design_params
-    params.require(:design).permit(:title, :price, :description, :tutorial_url, :shape_id, :user_id)
+    params.require(:design).permit(:title, :price, :description, :tutorial_url, :shape_id, :user_id, :sheet)
   end
 end
 

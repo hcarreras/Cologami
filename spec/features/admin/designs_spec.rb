@@ -55,6 +55,7 @@ feature 'designs' do
       fill_in 'Title', with: "Hilarious hippopotamus"
       click_on "Save"
       expect(page).to have_content "Design was successfully updated."
+      expect(page).to have_content "Hilarious hippopotamus"
     end
   end
 end

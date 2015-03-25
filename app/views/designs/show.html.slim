@@ -1,16 +1,13 @@
 - model_class = Design
-.panel-default
+.panel.panel-default
+  - if @design.shape.tutorial_url.present?
+    .embed-responsive.embed-responsive-16by9
+      iframe.embed-responsive-item src="#{@design.shape.tutorial_url.sub!('watch?v=', 'embed/')}"
   .panel-body
-    - if @design.shape.tutorial_url.present?
-      .row
-        .col-md-10.col-md-offset-1
-          .embed-responsive.embed-responsive-16by9
-            iframe.embed-responsive-item src="#{@design.shape.tutorial_url.sub!('watch?v=', 'embed/')}"
     .row
       .col-md-7
         #design_images
           #myCarousel.carousel.slide data-ride="carousel"
-
             ol.carousel-indicators
               li.active data-target="#carousel-example-generic" data-slide-to="0"
               - @design.images[1..-1].each_with_index do
@@ -29,14 +26,32 @@
                 .glyphicon.glyphicon-chevron-right aria-hidden="true"
                 span.sr-only Next
       .col-md-5
-        div class="page-header"
-          h1= @design.title
-        p
-          = @design.description
+        .panel.panel-default
+          .panel-body
+            div class="page-header"
+              h1= @design.title
+            p
+              = @design.description
 
-        - unless current_user && current_user.has_design?(@design)
-          p
-            = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-lg btn-success"
+            - unless current_user && current_user.has_design?(@design)
+              p
+                = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-default btn-lg btn-block btn-success"
 
-        - if current_user && current_user.has_design?(@design)
-          p= link_to "Download Sheet", @design.sheet_url, class: "btn btn-default btn-primary"
+            - if current_user && current_user.has_design?(@design)
+              p= link_to "Download Sheet", @design.sheet_url, class: "btn btn-default btn-lg btn-block btn-success"
+
+            hr
+            .row
+              .col-sm-6
+                = fa_icon("print", class: "fa-5x icon-info")
+                span Imprime
+              .col-sm-6
+                = fa_icon("send-o", class: "fa-5x icon-info")
+                span Dobla
+            .row
+              .col-sm-6
+                = fa_icon("graduation-cap", class: "fa-5x icon-info")
+                span Aprende
+              .col-sm-6
+                = fa_icon("child", class: "fa-5x icon-info")
+                span Disfruta

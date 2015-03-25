@@ -3,7 +3,7 @@ class PurchasesController < InheritedResources::Base
 
   def new
     redirect_to(root_path, notice: "Ups! It looks like there are no designs in your cart. Why don't you add some?") and return if current_cart.line_items.empty?
-    redirect_to users_path and return unless current_user
+    redirect_to new_user_session_path and return unless current_user
     new!
   end
 

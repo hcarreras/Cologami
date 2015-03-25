@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  number:
+    currency:
+        format:
+            format: "%n %u"
+            unit: "€"
+            # These three are to override number.format and are optional
+            separator: ","
+            delimiter: ""
+            precision: 2

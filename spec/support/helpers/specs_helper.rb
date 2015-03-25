@@ -1,7 +1,7 @@
 module SpecHelpers
   def visit_current_cart
     visit root_url
-    find(".current-cart").click()
+    find(".cart").click()
   end
 end
 

@@ -1,13 +1,21 @@
-.panel-default
-  .panel-body
-    table.table
-      tbody
-        - resource.line_items.each do |line_item|
-          td= image_tag line_item.design.images.first.file_url(:thumb)
-          td= line_item.design.title
-          td= line_item.design.price
-          td= button_to line_item_path(line_item), id: "delete-#{line_item.id}" , method: :delete do
-            span.glyphicon.glyphicon-remove aria-hidden="true"
 
-  .btn.btn-lg.btn-default= link_to "Seguir Comprando", root_url
-  .btn.btn-lg.btn-primary= link_to "Proceder al pago", new_purchase_url
+- if current_cart.line_items.any?
+  ul.list-group
+    - resource.line_items.each do |line_item|
+      li.list-group-item
+        .row
+          .col-sm-2.vcenter
+            =image_tag line_item.design.images.first.file_url(:thumb)
+          .col-sm-1.vcenter
+            = line_item.design.title
+          .col-sm-1.vcenter
+            = number_to_currency line_item.design.price
+          .col-sm-1.col-sm-offset-7.vcenter
+            =button_to line_item_path(line_item), id: "delete-#{line_item.id}" , method: :delete, class:"btn btn-danger btn-sm" do
+              = fa_icon("close")
+- else
+  .text-center
+    i Tu carrito está vacío
+
+=' link_to "Seguir Comprando", root_url, class:"btn btn-lg btn-default"
+= link_to "Proceder al pago", new_purchase_url, class:"btn btn-lg btn-primary" if current_cart.line_items.any?

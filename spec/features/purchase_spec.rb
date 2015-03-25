@@ -10,17 +10,18 @@ feature 'purchase' do
       end
 
       scenario "there is no user" do
+        visit design_url(design)
+        click_on "Add to cart"
         visit_current_cart
         click_on "Proceder al pago"
-        expect(page).to have_content "Create an account"
-        expect(page).to have_content "Login"
+        expect(page).to have_content "Sign in"
+        expect(page).to have_content "Registrate"
       end
     end
     feature "requires to have a cart with line items" do
       scenario "there are no items added to the cart" do
         visit_current_cart
-        click_on "Proceder al pago"
-        expect(page).to have_content "Ups! It looks like there are no designs in your cart. Why don't you add some?"
+        expect(page).to have_no_link "Proceder al pago"
       end
     end
     feature "allows user to pay" do
@@ -38,7 +39,7 @@ feature 'purchase' do
         click_on "Proceder al pago"
         click_on "Pagar ahora"
         expect(page).to have_content "Gracias por su compra, ya puede acceder al contenido que ha comprado"
-        expect(page).to have_content "Long live to Harigami"
+        expect(page).to have_content "Long life to Harigami"
       end
     end
   end

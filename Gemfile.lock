@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 33ee5da122c5bd50ea90a4b6fd2efe96600081c7
+  branch: master
+  specs:
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,6 +77,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -157,9 +168,6 @@ GEM
       rdoc (~> 4.0)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
-    simple_form (3.0.3)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
     slim (2.1.0)
       temple (~> 0.6.9)
       tilt (>= 1.3.3, < 2.1)
@@ -209,6 +217,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  font-awesome-rails
   inherited_resources
   jbuilder (~> 1.2)
   jquery-rails
@@ -224,7 +233,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.2)
   sdoc
   shoulda-matchers
-  simple_form
+  simple_form (~> 3.1.0.rc1)!
   slim-rails
   sqlite3
   turbolinks

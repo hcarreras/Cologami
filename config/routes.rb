@@ -10,7 +10,6 @@ Harigami::Application.routes.draw do
   resources :line_items, only: [:create, :destroy]
   resources :carts, only: [:show]
   resources :users, only: [:index]
-  resources :orders, only: [:new]
   resources :purchases, only: [:new, :create]
 
   root to: "static#index"

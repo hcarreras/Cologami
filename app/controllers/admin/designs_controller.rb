@@ -32,8 +32,8 @@ class Admin::DesignsController < Admin::AdminController
     respond_to do |format|
       if @design.update_attributes(design_params)
         if params[:images]
+          @design.images.delete_all
           params[:images]['file'].each do |a|
-            @design.images.delete_all
             @design.images.create!(file: a, design_id: @design.id)
           end
         end

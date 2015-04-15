@@ -39,7 +39,6 @@ feature 'purchase' do
         click_on "Proceder al pago"
         click_on "Pagar ahora"
         expect(page).to have_content "Gracias por su compra, ya puede acceder al contenido que ha comprado"
-        expect(page).to have_content "Long life to Harigami"
       end
     end
   end

@@ -4,7 +4,7 @@ class LineItem < ActiveRecord::Base
   validate :unique_per_cart
 
   def unique_per_cart
-    if self.cart.line_items.any? {|line_item| line_item.id == self.id}
+    if self.cart.line_items.any? {|line_item| line_item.design == self.design}
       errors.add(:base, "Design already in cart")
     end
   end

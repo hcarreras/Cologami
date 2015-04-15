@@ -5,7 +5,7 @@ class Cart < ActiveRecord::Base
     current_item = line_items.find_by(design_id: design_id)
     unless current_item
       current_item = LineItem.new(design_id: design_id)
-      line_items << current_item
+      current_item.cart = self
     end
     current_item
   end

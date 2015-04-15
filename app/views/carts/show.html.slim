@@ -17,5 +17,5 @@
   .text-center
     i Tu carrito está vacío
 
-=' link_to "Seguir Comprando", root_url, class:"btn btn-lg btn-default"
+=> link_to "Seguir Comprando", root_url, class:"btn btn-lg btn-default"
 = link_to "Proceder al pago", new_purchase_url, class:"btn btn-lg btn-primary" if current_cart.line_items.any?

@@ -6,7 +6,6 @@ class LineItemsController < InheritedResources::Base
   def create
     @design = Design.find(params[:design_id])
     @line_item = @cart.add_design(@design.id)
-
     respond_to do |format|
       if @line_item.save
         format.html {redirect_to cart_path(current_cart), notice: "Design added to the cart"}

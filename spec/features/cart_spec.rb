@@ -43,19 +43,6 @@ feature 'cart' do
       expect(page).to have_content("Seguir Comprando")
       expect(page).to have_content("Proceder al pago")
     end
-
-    context "when user logs in after adding to cart" do
-      given!(:line_item) { create :line_item, design: design}
-      given!(:cart) { create :cart, line_items: [line_item]}
-      given!(:purchase) { create :purchase, cart: cart, user: user}
-
-      scenario "removes designs from cart if user already owns it" do
-        visit design_path(design)
-        click_on("2,98 € Add to cart")
-        login_as user
-        skip "This login_as doesn't call the real action"
-      end
-    end
   end
 
   feature "managing the cart" do

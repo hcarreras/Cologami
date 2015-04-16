@@ -4,14 +4,20 @@ table.table.table-hover
     tr
       th Id
       th User
+      th Status
+      th Total Price
       th Designs
+      th Payment Date
       th Date
     tbody
       - @purchases.each do |purchase|
         tr
           td= purchase.id
           td= purchase.user.email
+          td= purchase.status
+          td= purchase.cart.total_price
           td
             - purchase.cart.line_items.each do |li|
               =link_to li.design.id, design_path(li.design)
+          td= purchase.paid_at.strftime('%d-%m-%Y') if purchase.paid_at
           td= purchase.created_at.strftime('%d-%m-%Y')

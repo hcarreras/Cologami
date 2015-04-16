@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :purchases
 
   def has_design? design
-    purchases.any? do |purchase|
+    purchases.paid.any? do |purchase|
       purchase.cart.line_items.any? do |li|
         li.design == design
       end

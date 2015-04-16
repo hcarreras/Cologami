@@ -9,4 +9,8 @@ class Cart < ActiveRecord::Base
     end
     current_item
   end
+
+  def total_price
+    self.line_items.map{|li| li.design.price}.sum
+  end
 end

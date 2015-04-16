@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318164403) do
+ActiveRecord::Schema.define(version: 20150415164001) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "design_images", force: true do |t|
@@ -48,6 +47,9 @@ ActiveRecord::Schema.define(version: 20150318164403) do
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status",         default: "not paid"
+    t.integer  "transaction_id"
+    t.datetime "paid_at"
   end
 
   create_table "shapes", force: true do |t|

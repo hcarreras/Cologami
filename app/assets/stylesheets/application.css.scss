@@ -3,6 +3,9 @@
 @import "bootstrap/theme";
 @import "font-awesome";
 
+body{
+  line-height: 1.7;
+}
 .main-container {
   padding: 30px;
 }
@@ -11,6 +14,9 @@ a{
   color: #3A3A3A;
 }
 
+h1{
+  margin-bottom: 1em;
+}
 .col-centered{
   float: none;
   margin: 0 auto;
@@ -36,6 +42,7 @@ hr{
 .navbar-top{
   background-image: linear-gradient(to bottom, white 0%, #fCfCfC 100%);
   border-top: #009633 3px solid;
+  box-shadow: 1px 1px 3px #888888;
 }
 
 .logo{
@@ -65,4 +72,28 @@ hr{
 
 .index-img{
   margin-bottom: 1.5em;
+}
+
+.footer{
+  background: rgb(203,239,198); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(203,239,198,1) 0%, rgba(184,216,179,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(203,239,198,1)), color-stop(100%,rgba(184,216,179,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbefc6', endColorstr='#b8d8b3',GradientType=0 ); /* IE6-9 */
+
+  box-shadow: -4px -2px 5px #C5C4C4;
+
+  a{
+    color:#009633;
+  }
+
+}
+
+.expand{
+  padding-top: 2em;
+  padding-bottom: 5em;
+
 }

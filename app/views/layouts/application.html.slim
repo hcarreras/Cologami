@@ -25,3 +25,12 @@ html
             a.close data-dismiss="alert" ×
             = value
       = yield
+    .footer
+      .expand
+        .row
+          .col-xs-3.col-sm-offset-3.col-xs-offset-2
+            b= link_to "Contacto", static_url("contact")
+          .col-xs-6
+            b= link_to "Términos y condiciones", static_url("terms")
+      .small
+        | © 2015 Cologami. All Rights Reserved

@@ -11,9 +11,11 @@ Harigami::Application.routes.draw do
   resources :carts, only: [:show]
   resources :users, only: [:index]
   resources :purchases, only: [:new, :create]
+  resources :static, only: [:index, :show], path: '/'
   resources :payments, only: [:create]
 
   root to: "static#index"
 
   get "admin" => "admin/shapes#index"
+  get '/:id' => 'static#show'
 end

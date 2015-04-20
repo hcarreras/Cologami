@@ -13,7 +13,7 @@ class PurchasesController < InheritedResources::Base
     @purchase.cart = current_cart
     if @purchase.save
       session[:cart_id] = nil
-      redirect_to @purchase.paypal_url(root_url)
+      redirect_to @purchase.paypal_url(static_url("thanks"))
     else
       render new
     end

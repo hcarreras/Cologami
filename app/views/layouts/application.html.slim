@@ -6,26 +6,26 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    nav.navbar.navbar-top
-      .navbar-header
-        = link_to(image_tag("harigami-logo-m-min.png", class:"logo img-responsive"), root_url)
-      .container-fluid.navbar-collapse
-        ul.nav.navbar-nav.navbar-right
-          li= link_to(fa_icon("shopping-cart", text: cart_amount, class:"fa-2x"), current_cart, class:"cart")
-          - if user_signed_in?
-            li= link_to(fa_icon("user", class:"logged fa-2x"), destroy_user_session_path, :method => :delete)
-          - else
-            li= link_to(fa_icon("user", class: "fa-2x"), new_user_session_path)
-
-
     .main-container
-      .container
-        - flash.each do |key, value|
-          div class="#{flash_class(key)}"
-            a.close data-dismiss="alert" ×
-            = value
-      = yield
-    .footer
+      .header
+        nav.navbar.navbar-top
+          .navbar-header
+            = link_to(image_tag("harigami-logo-m-min.png", class: "logo img-responsive"), root_url)
+          .container-fluid.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li.cart= link_to(fa_icon("shopping-cart ", text: cart_amount, class: "fa-2x"), current_cart, class: "cart")
+              - if user_signed_in?
+                li= link_to(fa_icon("user", class: "logged fa-2x"), destroy_user_session_path, :method => :delete)
+              - else
+                li= link_to(fa_icon("user", class: "fa-2x"), new_user_session_path)
+      .body
+        .container
+          - flash.each do |key, value|
+            div class="#{flash_class(key)}"
+              a.close data-dismiss="alert" ×
+              = value
+        = yield
+    footer.footer
       .expand
         .row
           .col-xs-3.col-sm-offset-3.col-xs-offset-2

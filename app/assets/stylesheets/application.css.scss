@@ -3,11 +3,49 @@
 @import "bootstrap/theme";
 @import "font-awesome";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body{
   line-height: 1.7;
+  margin:0;
+  padding:0;
+  height:100%;
 }
+.body{
+  padding: 2em;
+  margin-bottom: 150px;
+}
+
+.footer{
+  background: rgb(203,239,198); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(203,239,198,1) 0%, rgba(184,216,179,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(203,239,198,1)), color-stop(100%,rgba(184,216,179,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbefc6', endColorstr='#b8d8b3',GradientType=0 ); /* IE6-9 */
+  box-shadow: -4px -2px 5px #C5C4C4;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  background-color: #f5f5f5;
+
+  a{
+    color:#009633;
+  }
+}
+
 .main-container {
-  padding: 30px;
+  min-height:100%;
+  height:100%;
+  position:relative;
 }
 
 a{
@@ -74,26 +112,7 @@ hr{
   margin-bottom: 1.5em;
 }
 
-.footer{
-  background: rgb(203,239,198); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(203,239,198,1) 0%, rgba(184,216,179,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(203,239,198,1)), color-stop(100%,rgba(184,216,179,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbefc6', endColorstr='#b8d8b3',GradientType=0 ); /* IE6-9 */
-
-  box-shadow: -4px -2px 5px #C5C4C4;
-
-  a{
-    color:#009633;
-  }
-
-}
-
 .expand{
   padding-top: 2em;
   padding-bottom: 5em;
-
 }

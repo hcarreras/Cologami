@@ -35,10 +35,10 @@
 
             - unless current_user && current_user.has_design?(@design)
               p
-                = button_to "#{number_to_currency @design.price} Add to cart", line_items_path(design_id: @design), class: "btn btn-default btn-lg btn-block btn-success"
+                = button_to "#{number_to_currency @design.price} Añadir al carrito", line_items_path(design_id: @design), class: "btn btn-default btn-lg btn-block btn-success"
 
             - if current_user && current_user.has_design?(@design)
-              p= link_to "Download Sheet", @design.sheet_url, class: "btn btn-default btn-lg btn-block btn-success"
+              p= link_to "Descargar plantilla", @design.sheet_url, class: "btn btn-default btn-lg btn-block btn-success"
 
             hr
             .row

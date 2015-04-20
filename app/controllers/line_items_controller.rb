@@ -8,7 +8,7 @@ class LineItemsController < InheritedResources::Base
     @line_item = @cart.add_design(@design.id)
     respond_to do |format|
       if @line_item.save
-        format.html {redirect_to cart_path(current_cart), notice: "Design added to the cart"}
+        format.html {redirect_to cart_path(current_cart), notice: "Diseño añadido al carrito"}
       else
         format.html do
           redirect_to :back, alert: @line_item.errors.full_messages.to_sentence

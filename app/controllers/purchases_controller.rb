@@ -2,7 +2,7 @@ class PurchasesController < InheritedResources::Base
   actions :new, :create
 
   def new
-    redirect_to(root_path, notice: "Ups! It looks like there are no designs in your cart. Why don't you add some?") and return if current_cart.line_items.empty?
+    redirect_to(root_path, notice: "Ups! Parece que no hay ningún diseño en el carrito, prueba a añadir alguno.") and return if current_cart.line_items.empty?
     redirect_to new_user_session_path and return unless current_user
     new!
   end

@@ -1,0 +1,22 @@
+es:
+  number:
+    currency:
+        format:
+            format: "%n %u"
+            unit: "€"
+            # These three are to override number.format and are optional
+            separator: ","
+            delimiter: ""
+            precision: 2
+  flash:
+    line_items:
+      destroy:
+        notice: "El diseño se ha eliminado del carrito"
+  devise:
+    sessions:
+      user:
+        signed_in: "Te has identificado"
+        signed_out: "Has cerrado sesión"
+    registrations:
+      user:
+        signed_up: "Te has registrado correctamente"

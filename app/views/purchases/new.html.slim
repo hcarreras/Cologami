@@ -1,5 +1,25 @@
 .panel.panel-default
   .panel-heading Pago de la compra
   .panel-body
+    ul.list-group
+      - current_cart.line_items.each do |line_item|
+        li.list-group-item
+          .row
+            .col-sm-2.vcenter
+              =image_tag line_item.design.images.first.file_url(:thumb)
+            .col-sm-1.vcenter
+              = line_item.design.title
+            .col-sm-2.vcenter
+              = number_to_currency line_item.design.price
+
+    .pull-right
+      h4
+        |Total
+        =< number_to_currency(current_cart.total_price)
     = simple_form_for @purchase, html: {class: "form form-vertical"} do |f|
       = f.button :submit, "Pagar ahora", class: "btn btn-primary"
+
+.row
+  .col-lg-12
+    .pull-right
+      = image_tag("https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg")

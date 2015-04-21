@@ -1,7 +1,6 @@
-
 - if current_cart.line_items.any?
   ul.list-group
-    - resource.line_items.each do |line_item|
+    - current_cart.line_items.each do |line_item|
       li.list-group-item
         .row
           .col-sm-2.vcenter
@@ -10,8 +9,8 @@
             = line_item.design.title
           .col-sm-1.vcenter
             = number_to_currency line_item.design.price
-          .col-sm-1.col-sm-offset-7.vcenter
-            =button_to line_item_path(line_item), id: "delete-#{line_item.id}" , method: :delete, class:"btn btn-danger btn-sm" do
+          .col-sm-1.col-sm-offset-6.vcenter
+            =button_to line_item_path(line_item), id: "delete-#{line_item.id}", method: :delete, class: "btn btn-danger btn-sm" do
               = fa_icon("close")
 - else
   .text-center

@@ -1,5 +1,6 @@
 Harigami::Application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
+  get "/admin" => "admin/shapes#index"
 
   namespace :admin do
     resources :designs, except: [:index, :show]
@@ -16,6 +17,5 @@ Harigami::Application.routes.draw do
 
   root to: "static#index"
 
-  get "admin" => "admin/shapes#index"
   get '/:id' => 'static#show'
 end

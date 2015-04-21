@@ -20,3 +20,14 @@ es:
     registrations:
       user:
         signed_up: "Te has registrado correctamente"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "Email incorrecto"
+            password:
+              too_short: "Contraseña demasiado corta"
+            password_confirmation:
+              confirmation: "Las contraseñas no coinciden"

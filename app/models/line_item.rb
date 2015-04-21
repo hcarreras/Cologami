@@ -5,7 +5,7 @@ class LineItem < ActiveRecord::Base
 
   def unique_per_cart
     if self.cart.line_items.any? {|line_item| line_item.design == self.design}
-      errors.add(:base, "Design already in cart")
+      errors.add(:base, "El diseño ya está en el carrito")
     end
   end
 end

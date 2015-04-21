@@ -6,12 +6,12 @@ feature 'purchase' do
     feature "requires an user" do
       before do
         visit design_url(design)
-        click_on "Add to cart"
+        click_on "Añadir al carrito"
       end
 
       scenario "there is no user" do
         visit design_url(design)
-        click_on "Add to cart"
+        click_on "Añadir al carrito"
         visit_current_cart
         click_on "Proceder al pago"
         expect(page).to have_content "Sign in"
@@ -31,7 +31,7 @@ feature 'purchase' do
       before do
         login_as user
         visit design_url(design)
-        click_on "Add to cart"
+        click_on "Añadir al carrito"
       end
 
       scenario "user pays correctly" do

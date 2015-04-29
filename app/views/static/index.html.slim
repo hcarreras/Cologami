@@ -1,10 +1,11 @@
-.row
-  - @designs.each do |design|
-    .col-sm-6
-      .panel.panel-default
-        .panel-body
-          = link_to(image_tag(design.images.first.file_url, class:"img-responsive index-img"), design_url(design))
-          .pull-right
-            .label.price= number_to_currency design.price
+- @designs.each_slice(2) do |designs|
+  .row
+    -designs.each do |design|
+      .col-sm-6
+        .panel.panel-default
+          .panel-body
+            = link_to(image_tag(design.images.first.file_url, class:"img-responsive index-img"), design_url(design))
+            .pull-right
+              .label.price= number_to_currency design.price
 
-          h2= design.title
+            h2= design.title

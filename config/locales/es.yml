@@ -28,6 +28,7 @@ es:
             email:
               invalid: "Email incorrecto"
               blank: "El email está en blanco"
+              taken: "Ese email ya está registrado"
             password:
               too_short: "Contraseña demasiado corta"
               blank: "La contraseña está en blanco"

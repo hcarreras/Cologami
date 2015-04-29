@@ -34,6 +34,7 @@ gem "mini_magick"
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem "rake"
 gem 'devise'
+gem 'devise-i18n'
 gem "font-awesome-rails"
 
 

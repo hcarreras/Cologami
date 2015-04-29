@@ -27,7 +27,9 @@ es:
           attributes:
             email:
               invalid: "Email incorrecto"
+              blank: "El email está en blanco"
             password:
               too_short: "Contraseña demasiado corta"
+              blank: "La contraseña está en blanco"
             password_confirmation:
               confirmation: "Las contraseñas no coinciden"

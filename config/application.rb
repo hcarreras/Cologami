@@ -17,6 +17,13 @@ module Harigami
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    config.i18n.default_locale = :es
+    I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+    I18n.locale = :es
+    I18n.default_locale = :es
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.locale = :es
+    # bypasses rails bug with i18n in production\
+    I18n.reload!
+    config.i18n.reload!
   end
 end

@@ -17,3 +17,6 @@
 
 /public
 /.idea
+
+/config/secrets.yml
+/config/application.yml

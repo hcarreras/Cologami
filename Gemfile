@@ -37,6 +37,9 @@ gem 'devise'
 gem 'devise-i18n'
 gem "font-awesome-rails"
 
+gem "figaro"
+gem "fog"
+gem "fog-aws"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

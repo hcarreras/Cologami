@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def purchased_designs
+    purchases.paid.map do |purchase|
+      purchase.cart.line_items.map { |li| li.design}
+    end.flatten
+  end
 end

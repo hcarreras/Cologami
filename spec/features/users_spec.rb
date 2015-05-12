@@ -22,4 +22,34 @@ feature 'user' do
       expect(page).to have_content("Password")
     end
   end
+
+  feature 'account page' do
+    context 'is not sign in' do
+      before do
+        visit static_url('account')
+      end
+
+      scenario 'it is redirected to the home page' do
+        expect_to_be_in_home
+      end
+    end
+
+    context 'user is sign in' do
+      given!(:user) { create :user}
+
+      before do
+        login_as user
+        visit static_url('account')
+      end
+
+      scenario 'shows user info' do
+        expect(page).to have_content("¡Bienvenido user@example.com!")
+      end
+
+      scenario 'can log out' do
+        click_on("Log out")
+        expect(page).to have_content("Has cerrado sesión")
+      end
+    end
+  end
 end

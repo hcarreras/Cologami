@@ -57,8 +57,6 @@ feature 'cart' do
     scenario "can delete line item" do
         visit_current_cart
         click_on("delete-1")
-        puts I18n.locale
-        puts I18n.default_locale
         expect(page).to have_content("El diseño se ha eliminado del carrito")
     end
   end

@@ -15,7 +15,7 @@ html
             ul.nav.navbar-nav.navbar-right
               li.cart= link_to(fa_icon("shopping-cart ", text: cart_amount, class: "fa-2x"), current_cart, class: "cart")
               - if user_signed_in?
-                li= link_to(fa_icon("user", class: "logged fa-2x"), destroy_user_session_path, :method => :delete)
+                li= link_to(fa_icon("user", class: "logged fa-2x"), static_url("account"))
               - else
                 li= link_to(fa_icon("user", class: "fa-2x"), new_user_session_path)
       .body

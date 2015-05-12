@@ -34,6 +34,8 @@ Harigami::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
   config.i18n.default_locale = :es
+  config.i18n.locale = :es
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

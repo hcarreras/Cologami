@@ -16,25 +16,18 @@ body{
 }
 .body{
   padding: 2em;
-  margin-bottom: 150px;
+  margin-bottom: 400px;
 }
 
 .footer{
-  background: rgb(203,239,198); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(203,239,198,1) 0%, rgba(184,216,179,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(203,239,198,1)), color-stop(100%,rgba(184,216,179,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(203,239,198,1) 0%,rgba(184,216,179,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbefc6', endColorstr='#b8d8b3',GradientType=0 ); /* IE6-9 */
+  background-image: image-url("footer.jpg");
   box-shadow: -4px -2px 5px #C5C4C4;
-
+  background-size: 100% 100%;
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 150px;
+  height: 400px;
   background-color: #f5f5f5;
 
   a{

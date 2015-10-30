@@ -25,6 +25,8 @@ gem 'turbolinks'
 gem 'slim-rails'
 gem 'inherited_resources'
 gem 'bootstrap-sass', '~> 3.3.1'
+gem "therubyracer"
+gem "less-rails"
 gem 'sass', '~> 3.2.19'
 gem 'sass-rails', '~> 4.0.2'
 gem 'autoprefixer-rails'

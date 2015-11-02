@@ -1,8 +1,5 @@
 - model_class = Design
 .panel.panel-default
-  - if @design.shape.tutorial_url.present?
-    .embed-responsive.embed-responsive-16by9
-      iframe.embed-responsive-item src="#{@design.shape.tutorial_url.sub!('watch?v=', 'embed/')}"
   .panel-body
     .row
       .col-md-7
@@ -55,3 +52,7 @@
               .col-sm-6
                 = fa_icon("child", class: "fa-5x icon-info")
                 span Disfruta
+    .row
+      - if @design.shape.tutorial_url.present?
+        .embed-responsive.embed-responsive-16by9.video-tutorial
+          iframe.embed-responsive-item src="#{@design.shape.tutorial_url.sub!('watch?v=', 'embed/')}"

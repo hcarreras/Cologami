@@ -29,3 +29,7 @@ en:
             separator: ","
             delimiter: ""
             precision: 2
+  mailer:
+    purchase_mailer:
+      send_confirmation:
+        subject: "Thanks for your order"

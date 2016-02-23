@@ -53,6 +53,7 @@ end
 
 group :development, :test do
   gem 'pry'
+  gem "letter_opener"
 end
 group :test do
   gem 'capybara'

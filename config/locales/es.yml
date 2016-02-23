@@ -34,3 +34,8 @@ es:
               blank: "La contraseña está en blanco"
             password_confirmation:
               confirmation: "Las contraseñas no coinciden"
+  mailer:
+    purchase_mailer:
+      send_confirmation:
+        subject: "Gracias por tu pedido"
+

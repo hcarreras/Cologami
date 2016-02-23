@@ -23,10 +23,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  if config.files_to_run.one?
-    config.default_formatter = 'doc'
-    config.default_formatter = 'color'
-  end
   config.include FactoryGirl::Syntax::Methods
 
   config.order = :random

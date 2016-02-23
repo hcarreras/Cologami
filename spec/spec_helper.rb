@@ -7,6 +7,7 @@ require 'factory_girl_rails'
 require 'pry'
 require 'database_cleaner'
 require 'capybara/poltergeist'
+require 'shoulda/matchers'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 include Warden::Test::Helpers
 Warden.test_mode!
@@ -39,4 +40,11 @@ RSpec.configure do |config|
   config.before(:each, type: :feature) { DatabaseCleaner.strategy = :truncation }
   config.before { DatabaseCleaner.start }
   config.after { DatabaseCleaner.clean }
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end

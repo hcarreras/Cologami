@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1'
+gem 'rails', '4.2.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -33,7 +33,7 @@ gem 'autoprefixer-rails'
 
 gem 'carrierwave'
 gem "mini_magick"
-gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
+gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem "rake"
 gem 'devise'
 gem 'devise-i18n'
@@ -52,7 +52,6 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'shoulda-matchers'
   gem 'pry'
 end
 group :test do
@@ -62,6 +61,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'shoulda-matchers', require: false
 end
 
 group :production do

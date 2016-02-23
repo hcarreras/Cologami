@@ -8,7 +8,7 @@ class Design < ActiveRecord::Base
 
 
   validates_presence_of :title, :price
-  validates :title, uniqueness: { scope: :shape}
+  validates :title, uniqueness: { scope: :shape_id}
   before_destroy :ensure_not_reference_by_any_line_item
 
   private

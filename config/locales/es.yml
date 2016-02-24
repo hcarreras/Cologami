@@ -38,4 +38,9 @@ es:
     purchase_mailer:
       send_confirmation:
         subject: "Gracias por tu pedido"
+        header: "Gracias por tu pedido"
+        header3: "Nos estamos haciendo cargo"
+        paragraph: "Gracias por confiar en Cologami. Estamos procesando tu pedido y te llegará en unos dias."
+        paragraph2: "Los detalles de su pedido van a continuación:"
+        greetings: "Atentamente, El Equipo de Cologami."
 

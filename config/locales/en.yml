@@ -33,3 +33,8 @@ en:
     purchase_mailer:
       send_confirmation:
         subject: "Thanks for your order"
+        header: "Thank you for your order"
+        header3: "We are taking care!"
+        paragraph: "Thanks for trusting in Cologami. Your Order is being processed and you will receive it in a few days."
+        paragraph2: "Here you can find the details:"
+        greetings: "Sincerely, The Cologami Team."

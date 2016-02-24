@@ -1,3 +1,8 @@
-h1 Thank you for your Order
-p Thanks for trusting on Cologami. Your Order is being processed and you will receive it in a few days.
-p Sincerely, Cologami Team
+- content_for :body do
+  h1= t('mailer.purchase_mailer.send_confirmation.header')
+  h3= t('mailer.purchase_mailer.send_confirmation.header3')
+  p= t('mailer.purchase_mailer.send_confirmation.paragraph')
+  p= t('mailer.purchase_mailer.send_confirmation.paragraph2')
+  p= t('mailer.purchase_mailer.send_confirmation.greetings')
+
+= render "layouts/mail_template"

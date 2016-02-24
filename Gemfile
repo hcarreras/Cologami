@@ -54,6 +54,7 @@ end
 group :development, :test do
   gem 'pry'
   gem "letter_opener"
+  gem 'dotenv-rails'
 end
 group :test do
   gem 'capybara'

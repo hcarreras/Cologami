@@ -5,6 +5,6 @@ class PurchaseMailer < ActionMailer::Base
     @purchase = purchase
     @customer = purchase.user
 
-    mail(to: @customer.email, subject: I18n.t("mailer:purchase_mailer.send_confirmation.subject"))
+    mail(to: @customer.email, subject: I18n.t("mailer.purchase_mailer.send_confirmation.subject"), bcc: ENV["PURCHASE_CONFIRMATION_EMAIL_BCC"])
   end
 end

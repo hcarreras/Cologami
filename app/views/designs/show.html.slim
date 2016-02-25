@@ -32,7 +32,14 @@
 
             - unless current_user && current_user.has_design?(@design)
               p
-                = button_to "#{number_to_currency @design.price} Añadir al carrito", line_items_path(design_id: @design), class: "btn btn-default btn-lg btn-block btn-success"
+                = simple_form_for(@line_item) do |f|
+                  = f.error_notification
+
+                  .form-inputs
+                    = f.input :design_id, as: :hidden, input_html: {value: @design.id}
+                    = f.input :quantity, as: :hidden, input_html: {value: 1}
+                  .form-actions
+                    = f.button :submit, "#{number_to_currency @design.price} Añadir al carrito", class: "btn btn-default btn-lg btn-block btn-success"
 
             - if current_user && current_user.has_design?(@design)
               p= link_to "Descargar plantilla", @design.sheet_url, class: "btn btn-default btn-lg btn-block btn-success"

@@ -8,10 +8,12 @@
           .col-sm-1.vcenter
             = line_item.design.title
           .col-sm-1.vcenter
-            = number_to_currency line_item.design.price
+            = "#{line_item.quantity} x #{number_to_currency(line_item.design_price)}"
           .col-sm-1.col-sm-offset-6.vcenter
             =button_to line_item_path(line_item), id: "delete-#{line_item.id}", method: :delete, class: "btn btn-danger btn-sm" do
               = fa_icon("close")
+  .pull-right
+    = "Total: #{number_to_currency(current_cart.total_price)}"
 - else
   .text-center
     i Tu carrito está vacío

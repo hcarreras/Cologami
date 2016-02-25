@@ -19,13 +19,15 @@ feature 'cart' do
       expect(page).to have_content("Diseño añadido al carrito")
     end
 
-    scenario "cannot add to cart twice the same design" do
+    scenario "can add to cart twice the same design" do
       visit design_path(design)
       click_on("2,98 € Añadir al carrito")
       expect(page).to have_content("Diseño añadido al carrito")
       visit design_path(design)
       click_on("2,98 € Añadir al carrito")
-      expect(page).to have_content("El diseño ya está en el carrito")
+      expect(page).to have_content("Diseño añadido al carrito")
+      expect(page).to have_content("2 x 2,98 €")
+      expect(page).to have_content("5,96 €")
     end
 
     scenario "can add multiple designs to the cart" do

@@ -11,71 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415164001) do
+ActiveRecord::Schema.define(version: 20160225180017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "carts", force: true do |t|
+  create_table "carts", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "design_images", force: true do |t|
-    t.string  "file"
+  create_table "design_images", force: :cascade do |t|
+    t.string  "file",      limit: 255
     t.integer "design_id"
   end
 
-  create_table "designs", force: true do |t|
-    t.string   "title"
+  create_table "designs", force: :cascade do |t|
+    t.string   "title",       limit: 255
     t.float    "price"
     t.text     "description"
     t.integer  "shape_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "sheet"
+    t.string   "sheet",       limit: 255
   end
 
-  create_table "line_items", force: true do |t|
+  create_table "line_items", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "design_id"
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
-  create_table "purchases", force: true do |t|
+  create_table "purchases", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",         default: "not paid"
+    t.string   "status",         limit: 255, default: "not paid"
     t.integer  "transaction_id"
     t.datetime "paid_at"
   end
 
-  create_table "shapes", force: true do |t|
-    t.string   "title"
-    t.string   "tutorial_url"
+  create_table "shapes", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.string   "tutorial_url", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "",    null: false
+    t.string   "encrypted_password",     limit: 255, default: "",    null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",                  default: false
+    t.boolean  "admin",                              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

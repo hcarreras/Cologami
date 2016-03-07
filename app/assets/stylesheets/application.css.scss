@@ -1,3 +1,6 @@
+/*
+*= require index
+*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
@@ -15,11 +18,7 @@ body{
   height:100%;
 }
 .body{
-  padding: 2em;
   margin-bottom: 450px;
-  max-width: 1250px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .footer{
@@ -57,6 +56,12 @@ h3{
   margin-bottom: 2em;
 }
 
+h2{
+  font-size: 75px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .col-centered{
   float: none;
   margin: 0 auto;
@@ -83,11 +88,15 @@ hr{
   background-image: linear-gradient(to bottom, white 0%, #fCfCfC 100%);
   border-top: #009633 3px solid;
   box-shadow: 1px 1px 3px #888888;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 
 .logo{
   margin-left: 3em;
   padding: 0.5em;
+  width: 169px;
 }
 
 .cart{

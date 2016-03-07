@@ -1,0 +1,144 @@
+.description{
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.row{
+  &.item-row{
+    max-width: 1040px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 156px;
+    padding-bottom: 156px;
+    > .panel{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.image{
+  margin-left: 3em;
+  margin-right: 6em;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.blue-item{
+  background-color: #28ABE3;
+  color: #146283;
+
+  .panel{
+    background-color: #F8FCFF;
+
+    .item-text-wrapper {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8%;
+        height: 92%;
+        border-left: 4px solid #146283;
+      }
+    }
+  }
+}
+
+.red-item{
+  background-color: #C91B26;
+  color: #852229;
+
+  .panel{
+    background-color: #FFF8F8;
+
+    .item-text-wrapper {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8%;
+        height: 92%;
+        border-left: 4px solid #831414;
+      }
+    }
+  }
+}
+
+.yellow-item{
+  background-color: #E8B71A;
+  color: #C79C14;
+
+
+  .panel{
+    background-color: #FFFFF8;
+
+    .item-text-wrapper {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8%;
+        height: 92%;
+        border-left: 4px solid #C79C14;
+      }
+    }
+  }
+}
+
+.purple-item{
+  background-color: #6E9ECF;
+  color: #4B6B8B;
+
+  .panel{
+    background-color: #F7FBFF;
+
+    .item-text-wrapper {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8%;
+        height: 92%;
+        border-left: 4px solid #4B6B8B;
+      }
+    }
+  }
+}
+
+.pink-item{
+  background-color: #FB6648;
+  color: #A94430;
+
+  .panel{
+    background-color: #FFF8F8;
+
+    .item-text-wrapper {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8%;
+        height: 92%;
+        border-left: 4px solid #A94430;
+      }
+    }
+  }
+}
+
+.row{
+  &.inside-row{
+    padding: 0;
+  }
+}
+
+.shape-container{
+  height: 100vh;
+  min-height: 705px;
+}
+
+.panel-item{
+  box-shadow: 9px 28px 90px 0px rgba(0,0,0,0.60);
+}

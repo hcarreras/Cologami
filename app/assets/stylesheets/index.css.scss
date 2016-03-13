@@ -128,6 +128,29 @@
   }
 }
 
+.green-item{
+  background-color: #8FF5A9;
+  color: #396143;
+
+  h3{
+    text-align: center;
+  }
+
+  .panel{
+    background-color: #E8F7EC;
+
+    .item-text-wrapper {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8%;
+        height: 92%;
+        border-left: 4px solid #396143;
+      }
+    }
+  }
+}
 .row{
   &.inside-row{
     padding: 0;

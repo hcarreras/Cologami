@@ -1,4 +1,8 @@
 es:
+  index:
+    buy:
+      title: "Consigue a tus héroes"
+      description: "Consiguelos ya!"
   number:
     currency:
         format:

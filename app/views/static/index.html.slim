@@ -13,3 +13,26 @@
                   = design.title
                 .description
                   p= design.description
+
+.green-item.shape-container
+  .row.item-row
+    .panel
+      .panel-default.panel-body.panel-item
+        .col-sm-12
+          h3
+            = t("index.buy.title")
+          .row.inside-row
+            .col-sm-6
+              .image
+
+            .col-sm-6.item-text-wrapper
+              .description
+                p= t("index.buy.description")
+                = simple_form_for(@line_item) do |f|
+                  = f.error_notification
+
+                  .form-inputs
+                    = f.input :design_id, as: :hidden, input_html: {value: @design.id}
+                    = f.input :quantity, as: :hidden, input_html: {value: 1}
+                  .form-actions
+                    = f.button :submit, "#{number_to_currency @design.price} Añadir al carrito", class: "btn btn-default btn-lg btn-block btn-success"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225180017) do
+ActiveRecord::Schema.define(version: 20160321201515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160225180017) do
 
   create_table "designs", force: :cascade do |t|
     t.string   "title",       limit: 255
-    t.float    "price"
     t.text     "description"
     t.integer  "shape_id"
     t.integer  "user_id"
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160225180017) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "order_id"
-    t.integer  "design_id"
+    t.integer  "shape_id"
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,9 +50,16 @@ ActiveRecord::Schema.define(version: 20160225180017) do
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",         limit: 255, default: "not paid"
+    t.string   "status",                  limit: 255, default: "not paid"
     t.integer  "transaction_id"
     t.datetime "paid_at"
+    t.string   "customer_name"
+    t.string   "customer_phone_number"
+    t.string   "address_street"
+    t.string   "address_additional_info"
+    t.string   "address_zip"
+    t.string   "address_city"
+    t.string   "address_country"
   end
 
   create_table "shapes", force: :cascade do |t|

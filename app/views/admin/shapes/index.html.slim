@@ -17,7 +17,6 @@ div class="page-header"
           - shape.designs.each do |design|
             tr
               td= link_to design.title, design_path(design)
-              td= design.price
               td= design.description
               td
                 - design.images.each do |image|

@@ -28,11 +28,13 @@
             .col-sm-6.item-text-wrapper
               .description
                 p= t("index.buy.description")
-                = simple_form_for(@line_item) do |f|
+                = simple_form_for(@line_item, url: line_items_path, method: :post, html: {class: "form-horizontal"}) do |f|
                   = f.error_notification
 
-                  .form-inputs
-                    = f.input :design_id, as: :hidden, input_html: {value: @design.id}
-                    = f.input :quantity, as: :hidden, input_html: {value: 1}
+                  .form-group
+                    = f.input :shape_id, as: :hidden, input_html: {value: @shape.id}
+                    = f.label :quantity, class:"control-label col-xs-3"
+                    .col-xs-5
+                      = f.input :quantity, collection: [10, 50, 100, 250, 500, 1000], include_blank: false, class: "form-control", label: false
                   .form-actions
-                    = f.button :submit, "#{number_to_currency @design.price} Añadir al carrito", class: "btn btn-default btn-lg btn-block btn-success"
+                    = f.button :submit, "Añadir al carrito", class: "btn btn-default btn-lg btn-block btn-success"

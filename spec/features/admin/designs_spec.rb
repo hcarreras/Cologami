@@ -13,7 +13,6 @@ feature 'designs' do
     scenario "proper params are filled" do
       click_on "New Design"
       fill_in 'Title', with: "Ninja Crane"
-      fill_in 'Price', with: 2.99
       fill_in 'Description', with: 'This crane will spy your kids while they play with it.'
       click_on 'Save'
       expect(page).to have_content "Design was successfully created."
@@ -21,16 +20,14 @@ feature 'designs' do
 
     scenario "at least a necessary param is not provided" do
       click_on "New Design"
-      fill_in 'Title', with: "Ninja Crane"
       click_on 'Save'
-      expect(page).to have_content "Price can't be blank"
+      expect(page).to have_content "Title can't be blank"
     end
 
     feature "with one images" do
       scenario "both images are properly created" do
         click_on "New Design"
         fill_in 'Title', with: "Ninja Crane"
-        fill_in 'Price', with: 2.99
         attach_file 'images[file][]', File.join(Rails.root,'spec/support/images/ninja_crane.jpg')
         click_on "Save"
         skip("Need to implement the index first")

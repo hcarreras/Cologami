@@ -3,6 +3,19 @@ es:
     buy:
       title: "Consigue a tus héroes"
       description: "Consiguelos ya!"
+  purchase:
+    your_cart: "Tu compra"
+    shipping_info: "Dirección de envío"
+    customer_name: "Nombre y Apellidos"
+    customer_phone_number: "Teléfono de Contacto"
+    address_line_1: "Línea 1 de dirección"
+    address_line_1_placeholder: "Calle y número"
+    address_line_2: "Línea 2 de dirección"
+    address_line_2_placeholder: "Piso, puerta"
+    address_city: "Ciudad"
+    address_zip: "Código ZIP"
+    address_country: "País"
+    submit: "Pagar ahora"
   number:
     currency:
         format:
@@ -47,4 +60,3 @@ es:
         paragraph: "Gracias por confiar en Cologami. Estamos procesando tu pedido y te llegará en unos dias."
         paragraph2: "Los detalles de su pedido van a continuación:"
         greetings: "Atentamente, El Equipo de Cologami."
-

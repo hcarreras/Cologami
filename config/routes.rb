@@ -10,7 +10,6 @@ Harigami::Application.routes.draw do
   end
   resources :designs, only: [:show, :index]
   resources :line_items, only: [:create, :destroy]
-  resources :carts, only: [:show]
   resources :users, only: [:index, :show]
   resources :purchases, only: [:new, :create]
   resources :static, only: [:index, :show], path: '/'

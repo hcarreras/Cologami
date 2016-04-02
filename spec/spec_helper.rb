@@ -24,7 +24,6 @@ RSpec.configure do |config|
   end
 
   config.include FactoryGirl::Syntax::Methods
-
   config.order = :random
   Kernel.srand config.seed
   config.infer_spec_type_from_file_location!
@@ -33,7 +32,10 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
-  config.before(:each, type: :feature) { DatabaseCleaner.strategy = :truncation }
+  config.before(:each, type: :feature) do
+    DatabaseCleaner.strategy = :truncation
+    I18n.locale = :es
+  end
   config.before { DatabaseCleaner.start }
   config.after { DatabaseCleaner.clean }
 end

@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'admin' do
   given!(:user) { create :user}
   given!(:admin) { create :user_admin}
+  given!(:design) { create :design, :with_image}
 
   scenario "redirects to root if user is not admin" do
     login_as user

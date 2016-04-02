@@ -34,6 +34,7 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
+gem "country_select"
 gem "rake"
 gem 'devise'
 gem 'devise-i18n'
@@ -71,7 +72,7 @@ group :production do
   gem 'puma'
 end
 
-ruby "2.1.3"
+ruby "2.3.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

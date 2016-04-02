@@ -1,45 +1,41 @@
 require 'spec_helper'
 
 feature 'purchase' do
-  given!(:design) { create :design}
+  given!(:design) { create :design, :with_image}
   feature 'proceed to checkout' do
     feature "requires an user" do
-      before do
-        visit design_url(design)
-        click_on "Añadir al carrito"
-      end
-
       scenario "there is no user" do
-        visit design_url(design)
+        visit root_url
         click_on "Añadir al carrito"
-        visit_current_cart
-        click_on "Proceder al pago"
         expect(page).to have_content "Sign in"
         expect(page).to have_content "Registrate"
       end
     end
     feature "requires to have a cart with line items" do
       scenario "there are no items added to the cart" do
-        visit_current_cart
-        expect(page).to have_no_link "Proceder al pago"
+        visit new_purchase_path
+        expect(page).to have_no_content "Tu compra"
+        expect(page).to have_no_content "Dirección de envío"
       end
     end
     feature "allows user to pay" do
-      given!(:design) { create :design}
       given!(:user) { create :user}
 
       before do
         login_as user
-        visit design_url(design)
+        visit root_url
         click_on "Añadir al carrito"
       end
 
-      scenario "user pays correctly" do
-        skip "The button should be mock and respond true"
-        visit_current_cart
-        click_on "Proceder al pago"
+      xscenario "user pays correctly" do
+        fill_in "Nombre y Apellidos", with: "Emilio Balanegra"
+        fill_in "Teléfono de Contacto", with: "666666666"
+        fill_in "Línea 1 de dirección", with: "Fake street"
+        fill_in "Línea 2 de dirección", with: "123"
+        fill_in "Ciudad", with: "Fakeland"
+        fill_in "Código ZIP", with: "1234"
         click_on "Pagar ahora"
-        expect(page).to have_content "Gracias por su compra, ya puede acceder al contenido que ha comprado"
+        expect(page).to have content "Dame tu dinero"
       end
     end
   end

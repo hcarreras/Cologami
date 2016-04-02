@@ -24,6 +24,7 @@ feature 'user' do
   end
 
   feature 'account page' do
+    given!(:design){create :design, :with_image}
     context 'is not sign in' do
       before do
         visit static_url('account')

@@ -13,7 +13,6 @@ html
             = link_to(image_tag("harigami-logo-m-min.png", class: "logo img-responsive"), root_url)
           .container-fluid.navbar-collapse
             ul.nav.navbar-nav.navbar-right
-              li.cart= link_to(fa_icon("shopping-cart ", text: cart_amount, class: "fa-2x"), current_cart, class: "cart")
               - if user_signed_in?
                 li= link_to(fa_icon("user", class: "logged fa-2x"), static_url("account"))
               - else

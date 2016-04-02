@@ -46,7 +46,7 @@ class Admin::DesignsController < Admin::AdminController
   private
 
   def design_params
-    params.require(:design).permit(:title, :price, :description, :tutorial_url, :shape_id, :user_id, :sheet)
+    params.require(:design).permit(:title, :description, :tutorial_url, :shape_id, :user_id, :sheet)
   end
 end
 

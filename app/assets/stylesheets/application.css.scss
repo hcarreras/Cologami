@@ -131,3 +131,25 @@ hr{
 .video-tutorial{
   margin: 1%;
 }
+
+.row{
+  &.item-row, &.panel-row{
+    max-width: 1040px;
+    margin-right: auto;
+    margin-left: auto;
+    > .panel{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  &.item-row{
+    padding-top: 156px;
+    padding-bottom: 156px;
+  }
+
+  &.panel-row{
+    padding-top: 86px;
+    padding-bottom: 85px;
+  }
+}

@@ -4,6 +4,6 @@ class LineItem < ActiveRecord::Base
   validates :quantity, :shape_id, presence: true
 
   def price
-    0
+    PriceCalculator.new.price_for(quantity)
   end
 end

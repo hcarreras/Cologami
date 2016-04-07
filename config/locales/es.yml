@@ -1,8 +1,12 @@
 es:
   index:
     buy:
-      title: "Consigue a tus héroes"
-      description: "Consiguelos ya!"
+      title: "Consigue a tus Héroes"
+      description_1: "Consigue ahora tu pack de Cologamis! Cada pack incluye todas las grullas, para que no te pierdas ninguno. Las grullas están impresas con papel de la máxima calidad, para asegurarte un resultado único."
+      description_2: "Además cada pack incluye las instrucciones de doblado, por si lo prefieres sobre nuestro videotutorial."
+      contact_us_1: "Contactanos. Mogui estará encantada de atenderos y haceros un descuentazo. Por guapos!"
+      contact_us_2: "mogui@cologami.com"
+      add_to_cart_button: "Comprar Ahora"
   purchase:
     your_cart: "Tu compra"
     shipping_info: "Dirección de envío"

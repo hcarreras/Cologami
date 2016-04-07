@@ -6,7 +6,7 @@ feature 'purchase' do
     feature "requires an user" do
       scenario "there is no user" do
         visit root_url
-        click_on "Añadir al carrito"
+        click_on I18n.t("index.buy.add_to_cart_button")
         expect(page).to have_content "Sign in"
         expect(page).to have_content "Registrate"
       end
@@ -24,7 +24,7 @@ feature 'purchase' do
       before do
         login_as user
         visit root_url
-        click_on "Añadir al carrito"
+        click_on I18n.t("index.buy.add_to_cart_button")
       end
 
       xscenario "user pays correctly" do

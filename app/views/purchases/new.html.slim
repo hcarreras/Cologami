@@ -8,8 +8,8 @@
             .row
               .col-sm-2.vcenter
                 //=image_tag line_item.shape.images.first.file_url(:thumb)
-              .col-sm-1.vcenter
-                = line_item.shape.title
+              .col-sm-2.vcenter
+                = "Pack #{line_item.quantity} #{line_item.shape.title.pluralize(line_item.quantity)}"
               .col-sm-2.vcenter
                 = number_to_currency line_item.price
 

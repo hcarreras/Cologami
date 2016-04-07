@@ -3,6 +3,7 @@ class StaticController < ApplicationController
     @designs = Design.all
     @shape = Shape.first
     @line_item = LineItem.new
+    @price = PriceCalculator.new.price_for(DEFAULT_QUANTITY)
   end
 
   def show

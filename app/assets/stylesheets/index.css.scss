@@ -1,9 +1,6 @@
 .description{
-  padding: 10px;
   margin-top: 30px;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 
@@ -144,11 +141,31 @@
   }
 }
 
-.shape-container{
+.shape-container, .purchase-container{
   height: 100vh;
   min-height: 705px;
+}
+
+.purchase-container{
+  font-size: 17px;
+  font-weight: 500;
+  .inside-row{
+    margin-bottom: 35px;
+  }
+  .image-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 255px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+
+    .purchase-image{
+      width: 255px;
+    }
+  }
 }
 
 .panel-item{
   box-shadow: 9px 28px 90px 0px rgba(0,0,0,0.60);
 }
+

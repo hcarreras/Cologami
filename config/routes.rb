@@ -14,6 +14,7 @@ Harigami::Application.routes.draw do
   resources :purchases, only: [:new, :create]
   resources :static, only: [:index, :show], path: '/'
   resources :payments, only: [:create]
+  resources :shape_prices, only: [:show]
 
 
   root to: "static#index"

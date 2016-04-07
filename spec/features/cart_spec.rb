@@ -8,7 +8,7 @@ feature 'cart' do
 
     scenario "can add to cart without user" do
       visit root_url
-      click_on("Añadir al carrito")
+      click_on(I18n.t("index.buy.add_to_cart_button"))
       login user
       expect(page).to have_content("Crane")
       expect(page).to have_content("Dirección de envío")
@@ -17,7 +17,7 @@ feature 'cart' do
     scenario "can add to cart when user is logged in" do
       login_as user
       visit root_url
-      click_on("Añadir al carrito")
+      click_on(I18n.t("index.buy.add_to_cart_button"))
       expect(page).to have_content("Crane")
       expect(page).to have_content("Dirección de envío")
     end

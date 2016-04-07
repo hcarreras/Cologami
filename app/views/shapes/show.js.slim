@@ -1,0 +1,7 @@
+| $("#price").html("#{ j (render partial: 'shapes/price') }");
+| $(".description").html("#{ j (render partial: 'shapes/description') }");
+
+- if @price == "other_quantity"
+  | $('input[type="submit"]').hide()
+- else
+  | $('input[type="submit"]').show()

@@ -23,7 +23,6 @@ body{
 
 .footer{
   background-image: image-url("footer.jpg");
-  box-shadow: -4px -2px 5px #C5C4C4;
   background-size: cover;
   background-position: bottom right;
   position: absolute;
@@ -57,7 +56,7 @@ h3{
 }
 
 h2{
-  font-size: 75px;
+  font-size: 65px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -151,5 +150,12 @@ hr{
   &.panel-row{
     padding-top: 86px;
     padding-bottom: 85px;
+  }
+}
+
+form{
+  .form-fields{
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

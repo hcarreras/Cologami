@@ -77,4 +77,5 @@ Harigami::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.stripe.publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
 end

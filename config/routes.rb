@@ -13,7 +13,7 @@ Harigami::Application.routes.draw do
   resources :users, only: [:index, :show]
   resources :purchases, only: [:new, :create]
   resources :static, only: [:index, :show], path: '/'
-  resources :payments, only: [:create]
+  resources :payments, only: [:new, :create]
   resources :shape_prices, only: [:show]
 
 

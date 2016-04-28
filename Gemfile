@@ -43,6 +43,9 @@ gem "font-awesome-rails"
 gem "figaro"
 gem "fog"
 gem "fog-aws"
+gem 'stripe-rails'
+gem 'money-rails'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

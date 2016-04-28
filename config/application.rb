@@ -25,5 +25,6 @@ module Harigami
     # bypasses rails bug with i18n in production\
     I18n.reload!
     config.i18n.reload!
+    config.stripe.publishable_key = 'pk_test_hWZbzksmcQcpiHrHYmOKzjHi'
   end
 end

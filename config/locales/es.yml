@@ -19,7 +19,7 @@ es:
     address_city: "Ciudad"
     address_zip: "Código ZIP"
     address_country: "País"
-    submit: "Pagar ahora"
+    submit: "Continuar"
   number:
     currency:
         format:

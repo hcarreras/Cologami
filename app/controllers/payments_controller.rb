@@ -1,5 +1,8 @@
 class PaymentsController < ApplicationController
-  protect_from_forgery except: [:create]
+
+  def new
+    @purchase = Purchase.find(params[:purchase])
+  end
 
   def create
     if payment_params[:payment_status] == "Completed"

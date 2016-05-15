@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321201515) do
+ActiveRecord::Schema.define(version: 20160510180841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(version: 20160321201515) do
     t.string   "address_zip"
     t.string   "address_city"
     t.string   "address_country"
+    t.integer  "price"
+    t.string   "payment_data"
+    t.integer  "payment_id"
+    t.string   "expire_month"
+    t.string   "expire_year"
+    t.string   "last4"
   end
 
   create_table "shapes", force: :cascade do |t|

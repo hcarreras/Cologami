@@ -11,9 +11,8 @@ Harigami::Application.routes.draw do
   resources :designs, only: [:show, :index]
   resources :line_items, only: [:create, :destroy]
   resources :users, only: [:index, :show]
-  resources :purchases, only: [:new, :create]
+  resources :purchases
   resources :static, only: [:index, :show], path: '/'
-  resources :payments, only: [:new, :create]
   resources :shape_prices, only: [:show]
 
 

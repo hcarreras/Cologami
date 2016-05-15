@@ -13,9 +13,37 @@ class PurchasesController < InheritedResources::Base
     @purchase.user = current_user
     @purchase.cart = current_cart
     if @purchase.save
-      redirect_to new_payment_path(purchase: @purchase)
+      token = params[:stripeToken]
+
+      # Create the charge on Stripe's servers - this will charge the user's card
+      begin
+        payment = Stripe::Charge.create(
+            amount: current_cart.total_price.fractional, # amount in cents, again
+            currency: "eur",
+            card: token,
+            description: "Harigami - PurchaseID: #{ @purchase.id }",
+            metadata: {
+                "purchase_id"     => "#{ @purchase.id }",
+                "user_id"     => "#{ current_user.id }",
+                "time"        => "#{ Time.now.to_i }",
+            }
+        )
+      rescue Stripe::CardError => e
+        flash[:alert] = "#{ e }"
+        redirect_to current_cart_path
+      end
+
+      if payment.present? && payment.paid == true
+        if @purchase.update_payment(payment)
+          redirect_to static_url("success"), notice: t("purchase.success_payment")
+        else
+          redirect_to root_url, alert: t("purchase.error_after_charging_payment")
+        end
+      else
+        render :new, alert: t("purchase.error_after_charging_payment")
+      end
     else
-      render new
+      render new, alert: t("purchase.error_after_charging_payment")
     end
   end
 

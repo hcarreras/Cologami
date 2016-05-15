@@ -20,6 +20,9 @@ es:
     address_zip: "Código ZIP"
     address_country: "País"
     submit: "Continuar"
+    success_payment: "Has pagado correctamente"
+    error_after_charging_payment: "Ha habido un error. Por favor mandanos un email a contacto@cologami.com y lo solucionaremos."
+    error_before_charging_payment: "There was an error but we did not charge any amount from your credit card."
   number:
     currency:
         format:

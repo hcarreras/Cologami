@@ -35,7 +35,7 @@ class PurchasesController < InheritedResources::Base
 
       if payment.present? && payment.paid == true
         if @purchase.update_payment(payment)
-          redirect_to static_url("success"), notice: t("purchase.success_payment")
+          redirect_to static_url("thanks"), notice: t("purchase.success_payment")
         else
           redirect_to root_url, alert: t("purchase.error_after_charging_payment")
         end

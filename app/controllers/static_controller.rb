@@ -4,6 +4,7 @@ class StaticController < ApplicationController
     @shape = Shape.first
     @line_item = LineItem.new
     @price = PriceCalculator.new.price_for(DEFAULT_QUANTITY)
+    render layout: "layouts/index"
   end
 
   def show

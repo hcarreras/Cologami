@@ -1,44 +1,45 @@
-- @designs.each do |design|
-  div class=(design_color(design) + " shape-container")
+#index
+  - @designs.each do |design|
+    div class=(design_color(design) + " shape-container")
+      .row.item-row
+        .panel
+          .panel-default.panel-body.panel-item
+            .col-sm-12
+              .row.inside-row
+                .col-sm-6
+                  .image
+                    = link_to(image_tag(design.images.first.file_url, class:"img-responsive index-img"), design_url(design))
+                .col-sm-6.item-text-wrapper
+                  h2
+                    = design.title
+                  .description
+                    p= design.description
+
+  .green-item.purchase-container
     .row.item-row
       .panel
         .panel-default.panel-body.panel-item
           .col-sm-12
+            h3
+              = t("index.buy.title")
             .row.inside-row
               .col-sm-6
-                .image
-                  = link_to(image_tag(design.images.first.file_url, class:"img-responsive index-img"), design_url(design))
+                .image-wrapper
+                  = image_tag "contact.jpg", class: "purchase-image"
+
               .col-sm-6.item-text-wrapper
-                h2
-                  = design.title
                 .description
-                  p= design.description
+                  = render "shapes/description"
+                = simple_form_for(@line_item, url: line_items_path, method: :post, html: {class: "form-horizontal"}) do |f|
+                  .form-fields
+                    = f.error_notification
 
-.green-item.purchase-container
-  .row.item-row
-    .panel
-      .panel-default.panel-body.panel-item
-        .col-sm-12
-          h3
-            = t("index.buy.title")
-          .row.inside-row
-            .col-sm-6
-              .image-wrapper
-                = image_tag "contact.jpg", class: "purchase-image"
+                    .form-group
+                      = f.input :shape_id, as: :hidden, input_html: {value: @shape.id}
+                      .col-xs-5
+                        = f.input :quantity, collection: collection_select_for(@shape), include_blank: false, selected: DEFAULT_QUANTITY, class: "form-control", label: false
+                      .col-xs-7
+                        #price= render "shapes/price"
 
-            .col-sm-6.item-text-wrapper
-              .description
-                = render "shapes/description"
-              = simple_form_for(@line_item, url: line_items_path, method: :post, html: {class: "form-horizontal"}) do |f|
-                .form-fields
-                  = f.error_notification
-
-                  .form-group
-                    = f.input :shape_id, as: :hidden, input_html: {value: @shape.id}
-                    .col-xs-5
-                      = f.input :quantity, collection: collection_select_for(@shape), include_blank: false, selected: DEFAULT_QUANTITY, class: "form-control", label: false
-                    .col-xs-7
-                      #price= render "shapes/price"
-
-                .form-actions
-                  = f.button :submit, t("index.buy.add_to_cart_button"), class: "btn btn-default btn-lg btn-block btn-success"
+                  .form-actions
+                    = f.button :submit, t("index.buy.add_to_cart_button"), class: "btn btn-default btn-lg btn-block btn-success"

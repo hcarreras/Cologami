@@ -1,4 +1,46 @@
 es:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Ha habido un error: %{errors}"
+  errors:
+      format: "%{attribute} %{message}"
+      messages:
+        accepted: Debe ser aceptado
+        blank: No puede estar en blanco
+        present: Debe estar en blanco
+        confirmation: No coincide
+        empty: No puede estar vacío
+        equal_to: Debe ser igual a %{count}
+        even: Debe ser par
+        exclusion: Está reservado
+        greater_than: Debe ser mayor que %{count}
+        greater_than_or_equal_to: Debe ser mayor que o igual a %{count}
+        inclusion: No está incluido en la lista
+        invalid: No es válido
+        less_than: Debe ser menor que %{count}
+        less_than_or_equal_to: Debe ser menor que o igual a %{count}
+        model_invalid: "Ha habido un error: %{errors}"
+        not_a_number: No es un número
+        not_an_integer: Debe ser un entero
+        odd: Debe ser impar
+        required: Debe existir
+        taken: Ya está en uso
+        too_long:
+          one: "Es demasiado largo (1 carácter máximo)"
+          other: "Es demasiado largo (%{count} caracteres máximo)"
+        too_short:
+          one: "Es demasiado corto (1 carácter mínimo)"
+          other: "Es demasiado corto (%{count} caracteres mínimo)"
+        wrong_length:
+          one: "No tiene la longitud correcta (1 carácter exactos)"
+          other: "No tiene la longitud correcta (%{count} caracteres exactos)"
+        other_than: Debe ser distinto de %{count}
+      template:
+        body: 'Se encontraron problemas con los siguientes campos:'
+        header:
+          one: No se pudo guardar este/a %{model} porque se encontró 1 error
+          other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
   number:
     currency:
         format:

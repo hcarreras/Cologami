@@ -36,16 +36,18 @@ class PurchasesController < InheritedResources::Base
 
       if payment.present? && payment.paid == true
         if @purchase.update_payment(payment)
-          redirect_to static_url("thanks"), notice: t("purchase.success_payment")
+          flash.now[:notice] = t("purchase.success_payment")
+          redirect_to static_url("thanks")
         else
-          redirect_to root_url, alert: t("purchase.error_after_charging_payment")
+          flash.now[:alert] = t("purchase.error_after_charging_payment")
+          redirect_to root_url
         end
       else
-        flash[:alert] = t("purchase.error_before_charging_payment")
+        flash.now[:alert] = t("purchase.error_before_charging_payment")
         render :new
       end
     else
-      flash[:alert] = t("purchase.error_before_charging_payment")
+      flash.now[:alert] = t("purchase.error_before_charging_payment")
       render :new
     end
   end

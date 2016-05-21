@@ -52,11 +52,12 @@ es:
             precision: 2
   index:
     buy:
-      title: "Consigue a tus Héroes"
-      description_1: "Consigue ahora tu pack de Cologamis! Cada pack incluye todas las grullas, para que no te pierdas ninguno. Las grullas están impresas con papel de la máxima calidad, para asegurarte un resultado único."
-      description_2: "Además cada pack incluye las instrucciones de doblado, por si lo prefieres sobre nuestro videotutorial."
-      contact_us_1: "Contactanos. Mogui estará encantada de atenderos y haceros un descuentazo. Por guapos!"
-      contact_us_2: "mogui@cologami.com"
+      title: Consigue a tus héroes
+      label: Selecciona tu pack
+      description_1: Consigue ahora tu pack de grullas Cologami.
+      description_2: Cada pack incluye todos los modelos de grullas (uno o varios ejemplares). Imprimimos en papel fino de origami y con colores intensos para asegurar la máxima calidad de tus figuras. Todos los diseños están impresos en papel A3 y recortados a medida.
+      description_3: Cada pack incluye instrucciones de doblado, por si lo prefieres sobre nuestro videotutorial.
+      contact_us_1: Si quieres hacer un pedido grande, ponte en contacto con nosotros escribiendo a contacto@cologami.com
       add_to_cart_button: "Comprar Ahora"
   purchase:
     free_shipping_cost: "Gastos de envío: Gratis"

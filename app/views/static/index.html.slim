@@ -15,7 +15,7 @@
                   .description
                     p= design.description
 
-  .green-item.purchase-container
+  .sky-item.purchase-container
     .row.item-row
       .panel
         .panel-default.panel-body.panel-item
@@ -25,12 +25,14 @@
             .row.inside-row
               .col-sm-6
                 .image-wrapper
-                  = image_tag "contact.jpg", class: "purchase-image"
+                  = image_tag "contact.jpg", class: "img-responsive purchase-image"
 
               .col-sm-6.item-text-wrapper
                 .description
                   = render "shapes/description"
                 = simple_form_for(@line_item, url: line_items_path, method: :post, html: {class: "form-horizontal"}) do |f|
+                  p
+                    b= t("index.buy.label")
                   .form-fields
                     = f.error_notification
 

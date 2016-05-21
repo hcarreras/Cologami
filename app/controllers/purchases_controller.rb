@@ -12,6 +12,7 @@ class PurchasesController < InheritedResources::Base
     @purchase = Purchase.new(purchase_params)
     @purchase.user = current_user
     @purchase.cart = current_cart
+
     if @purchase.save
       token = params[:stripeToken]
 
@@ -40,10 +41,12 @@ class PurchasesController < InheritedResources::Base
           redirect_to root_url, alert: t("purchase.error_after_charging_payment")
         end
       else
-        render :new, alert: t("purchase.error_after_charging_payment")
+        flash[:alert] = t("purchase.error_before_charging_payment")
+        render :new
       end
     else
-      render new, alert: t("purchase.error_after_charging_payment")
+      flash[:alert] = t("purchase.error_before_charging_payment")
+      render :new
     end
   end
 

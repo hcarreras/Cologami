@@ -6,14 +6,14 @@ class Purchase < ActiveRecord::Base
   scope :paid, -> { where(status:"paid") }
 
   def update_payment(payment)
-    self.price          = Money.new(payment.amount, payment.currency)
+    self.price          = payment.amount
     self.payment_data   = payment.to_json
     self.payment_id     = payment.id
     self.expire_month   = payment.source[:exp_month]
     self.expire_year    = payment.source[:exp_year]
     self.last4          = payment.source[:last4]
     self.status         = "paid"
-    self.paid_at   = Time.now
+    self.paid_at        = Time.now
     self.save
   end
 end

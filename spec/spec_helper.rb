@@ -32,7 +32,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
-  config.before(:each, type: :feature) do
+  config.before(:each) do
     DatabaseCleaner.strategy = :truncation
     I18n.locale = :es
   end

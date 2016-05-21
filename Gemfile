@@ -68,6 +68,7 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'shoulda-matchers', require: false
+  gem 'timecop'
 end
 
 group :production do

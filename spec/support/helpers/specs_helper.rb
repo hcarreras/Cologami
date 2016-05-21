@@ -1,4 +1,4 @@
-module SpecHelpers
+module FeatureSpecHelpers
   def visit_current_cart
     visit root_url
     find("a.cart").click()
@@ -17,6 +17,14 @@ module SpecHelpers
   end
 end
 
+module SpecHelpers
+  def set_current_cart cart
+    allow_any_instance_of(ApplicationController).to receive(:current_cart).and_return cart
+  end
+end
+
 RSpec.configure do |config|
-  config.include(SpecHelpers, type: :feature)
+  config.include Devise::TestHelpers, type: :controller
+  config.include(FeatureSpecHelpers, type: :feature)
+  config.include(SpecHelpers)
 end

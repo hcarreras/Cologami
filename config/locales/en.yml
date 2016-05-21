@@ -29,6 +29,22 @@ en:
             separator: ","
             delimiter: ""
             precision: 2
+  purchase:
+    your_cart: "Tu card"
+    shipping_info: "Shipping Address"
+    customer_name: "Name and surname"
+    customer_phone_number: "Contact number"
+    address_line_1: "Address Line 1"
+    address_line_1_placeholder: "Street and number"
+    address_line_2: "Address Line 2"
+    address_line_2_placeholder: "Door"
+    address_city: "City"
+    address_zip: "ZIP"
+    address_country: "Country"
+    submit: "Next"
+    success_payment: "You have successfully paid"
+    error_after_charging_payment: "There was an error. Please contact us at contact@cologami.com and we'll solve it"
+    error_before_charging_payment: "We haven't charge your credit card but there was an error. Please try again."
   mailer:
     purchase_mailer:
       send_confirmation:

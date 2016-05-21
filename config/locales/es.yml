@@ -1,4 +1,13 @@
 es:
+  number:
+    currency:
+        format:
+            format: "%n %u"
+            unit: "€"
+            # These three are to override number.format and are optional
+            separator: ","
+            delimiter: ""
+            precision: 2
   index:
     buy:
       title: "Consigue a tus Héroes"
@@ -22,16 +31,7 @@ es:
     submit: "Continuar"
     success_payment: "Has pagado correctamente"
     error_after_charging_payment: "Ha habido un error. Por favor mandanos un email a contacto@cologami.com y lo solucionaremos."
-    error_before_charging_payment: "There was an error but we did not charge any amount from your credit card."
-  number:
-    currency:
-        format:
-            format: "%n %u"
-            unit: "€"
-            # These three are to override number.format and are optional
-            separator: ","
-            delimiter: ""
-            precision: 2
+    error_before_charging_payment: "No te preocupes, no te hemos cobrado nada, pero ha habido un error. Por favor, intentalo de nuevo."
   flash:
     line_items:
       destroy:

@@ -17,6 +17,7 @@ es:
       contact_us_2: "mogui@cologami.com"
       add_to_cart_button: "Comprar Ahora"
   purchase:
+    free_shipping_cost: "Gastos de envío: Gratis"
     your_cart: "Tu compra"
     shipping_info: "Dirección de envío"
     customer_name: "Nombre y Apellidos"

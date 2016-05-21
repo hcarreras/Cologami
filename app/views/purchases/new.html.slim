@@ -1,46 +1,48 @@
-.row.panel-row
-  .panel.panel-default
-    .panel-heading= t("purchase.your_cart")
-    .panel-body
-      ul.list-group
-        - current_cart.line_items.each do |line_item|
-          li.list-group-item
+#purchase
+  .row.panel-row
+    .panel.panel-default
+      .panel-heading= t("purchase.your_cart")
+      .panel-body
+        ul.list-group
+          - current_cart.line_items.each do |line_item|
+            li.list-group-item
+              .row
+                .col-sm-2.vcenter
+                  //=image_tag line_item.shape.images.first.file_url(:thumb)
+                .col-sm-2.vcenter
+                  = "Pack #{line_item.quantity} #{line_item.shape.title.pluralize(line_item.quantity)}"
+                .col-sm-2.vcenter
+                  = number_to_currency line_item.price
+
+        .pull-right.total-wrapper
+          p= t("purchase.free_shipping_cost")
+          .pull-right.total-price
+            | Total:
+            =< number_to_currency(current_cart.total_price)
+
+    .panel.panel-default
+      .panel-heading= t("purchase.shipping_info")
+      .panel-body
+        = simple_form_for @purchase, html: {class: "form form-vertical"} do |f|
+          = f.error_notification
+          .form-inputs
             .row
-              .col-sm-2.vcenter
-                //=image_tag line_item.shape.images.first.file_url(:thumb)
-              .col-sm-2.vcenter
-                = "Pack #{line_item.quantity} #{line_item.shape.title.pluralize(line_item.quantity)}"
-              .col-sm-2.vcenter
-                = number_to_currency line_item.price
-
-      .pull-right
-        h4
-          |Total
-          =< number_to_currency(current_cart.total_price)
-
-  .panel.panel-default
-    .panel-heading= t("purchase.shipping_info")
-    .panel-body
-      = simple_form_for @purchase, html: {class: "form form-vertical"} do |f|
-        = f.error_notification
-        .form-inputs
-          .row
-            .col-xs-6
-              = f.input :customer_name, label: t("purchase.customer_name")
-            .col-xs-6
-              = f.input :customer_phone_number, label: t("purchase.customer_phone_number")
-          .row
-            .col-xs-6
-              = f.input :address_street, label: t("purchase.address_line_1"), placeholder: t("purchase.address_line_1_placeholder")
-            .col-xs-6
-              = f.input :address_additional_info, label: t("purchase.address_line_2"), placeholder: t("purchase.address_line_2_placeholder")
-          .row
-            .col-xs-6
-              = f.input :address_city, label: t("purchase.address_city")
-            .col-sm-2.col-xs-6
-              = f.input :address_zip, label: t("purchase.address_zip")
-            .col-sm-4.col-xs-6
-              = f.input :address_country, label: t("purchase.address_country"), collection: ["ESPAÑA"], include_blank: false
-        .pull-right
-          .stripe-button-wrapper
-            script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-amount="#{current_cart.total_price.cents}" data-locale="es" data-currency="eur" data-name = "Cologami" data-email= "#{current_user.email}" data-label= "Pagar Ahora"
+              .col-xs-6
+                = f.input :customer_name, label: t("purchase.customer_name")
+              .col-xs-6
+                = f.input :customer_phone_number, label: t("purchase.customer_phone_number")
+            .row
+              .col-xs-6
+                = f.input :address_street, label: t("purchase.address_line_1"), placeholder: t("purchase.address_line_1_placeholder")
+              .col-xs-6
+                = f.input :address_additional_info, label: t("purchase.address_line_2"), placeholder: t("purchase.address_line_2_placeholder")
+            .row
+              .col-xs-6
+                = f.input :address_city, label: t("purchase.address_city")
+              .col-sm-2.col-xs-6
+                = f.input :address_zip, label: t("purchase.address_zip")
+              .col-sm-4.col-xs-6
+                = f.input :address_country, label: t("purchase.address_country"), collection: ["ESPAÑA"], include_blank: false
+          .pull-right
+            .stripe-button-wrapper
+              script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-amount="#{current_cart.total_price.cents}" data-locale="es" data-currency="eur" data-name = "Cologami" data-email= "#{current_user.email}" data-label= "Pagar Ahora"

@@ -8,7 +8,6 @@ Harigami::Application.routes.draw do
     resources :shapes, except: :show
     resources :purchases, only: [:index]
   end
-  resources :designs, only: [:show, :index]
   resources :line_items, only: [:create, :destroy]
   resources :users, only: [:index, :show]
   resources :purchases

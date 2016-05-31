@@ -8,8 +8,7 @@
   }
 
   .header-item{
-    padding: 80px;
-    padding-top: 50px;
+    padding-top: 10px;
     color: #e4e4e4;
     text-align: center;
     h1{
@@ -25,17 +24,21 @@
       font-family: "Nexa light";
       padding: 0px 203px;
     }
-    .discover-call-to-action{
-      .glyphicon{
-        font-size: 60px;
+    .header-body{
+      padding: 80px;
+      padding-top: 40px;
+      .discover-call-to-action{
+        .glyphicon{
+          font-size: 60px;
+        }
+        .or{
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        margin-top: 20px;
+        letter-spacing: 7px;
+        font-size: 18px;
       }
-      .or{
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-      margin-top: 20px;
-      letter-spacing: 7px;
-      font-size: 18px;
     }
   }
 

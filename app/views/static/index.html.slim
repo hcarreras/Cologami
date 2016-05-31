@@ -1,15 +1,21 @@
 #index
   .header-item.purchase-container
-    .panel
-      .panel-body
-        h1 Pon una nueva cara al Origami clásico
-        h2 Plantillas diseñadas para montar figuras de papel con vida propia
-        #buy-now.button.btn.btn-default.btn-success Compralos Ya!
-        .discover-call-to-action
-          .or ó
-          span Descubre nuestras grullas
-          div
-            span.glyphicon.glyphicon-chevron-down aria-hidden="true"
+    .container
+      - flash.each do |key, value|
+        div class="#{flash_class(key)}"
+          a.close data-dismiss="alert" ×
+          = value
+    .header-body
+      .panel
+        .panel-body
+          h1 Pon una nueva cara al Origami clásico
+          h2 Plantillas diseñadas para montar figuras de papel con vida propia
+          #buy-now.button.btn.btn-default.btn-success Compralos Ya!
+          .discover-call-to-action
+            .or ó
+            span Descubre nuestras grullas
+            div
+              span.glyphicon.glyphicon-chevron-down aria-hidden="true"
   - @designs.each do |design|
     div class=(design_color(design) + " shape-container")
       .row.item-row

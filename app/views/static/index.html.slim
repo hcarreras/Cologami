@@ -1,4 +1,15 @@
 #index
+  .header-item.purchase-container
+    .panel
+      .panel-body
+        h1 Pon una nueva cara al Origami clásico
+        h2 Plantillas diseñadas para montar figuras de papel con vida propia
+        #buy-now.button.btn.btn-default.btn-success Compralos Ya!
+        .discover-call-to-action
+          .or ó
+          span Descubre nuestras grullas
+          div
+            span.glyphicon.glyphicon-chevron-down aria-hidden="true"
   - @designs.each do |design|
     div class=(design_color(design) + " shape-container")
       .row.item-row
@@ -30,7 +41,7 @@
               .col-sm-6.item-text-wrapper
                 .description
                   = render "shapes/description"
-                = simple_form_for(@line_item, url: line_items_path, method: :post, html: {class: "form-horizontal"}) do |f|
+                = simple_form_for(@line_item, url: line_items_path, method: :post, html: {class: "form-horizontal buy-form"}) do |f|
                   p
                     b= t("index.buy.label")
                   .form-fields

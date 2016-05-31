@@ -1,7 +1,42 @@
 #index{
+  h1,h2,h3,h4,h5{
+    font-family: "Nexa Bold", Verdana, Tahoma;
+  }
   .description{
     margin-top: 30px;
     margin-bottom: 25px;
+  }
+
+  .header-item{
+    padding: 80px;
+    padding-top: 50px;
+    color: #e4e4e4;
+    text-align: center;
+    h1{
+      text-shadow: 1px 2px rgba(81, 100, 66, 0.22);
+      font-size: 60px;
+      font-family: "Nexa bold";
+    }
+    h2{
+      color: #e4e4e4;
+      text-shadow: 1px 1px #3a3838;
+      font-size: 25px;
+      letter-spacing: 3px;
+      font-family: "Nexa light";
+      padding: 0px 203px;
+    }
+    .discover-call-to-action{
+      .glyphicon{
+        font-size: 60px;
+      }
+      .or{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      margin-top: 20px;
+      letter-spacing: 7px;
+      font-size: 18px;
+    }
   }
 
   .image{
@@ -122,6 +157,16 @@
     }
   }
 
+  .header-item {
+    background: url("header.jpg");
+    background-size: cover;
+    background-position: 50% 100%;
+    .panel{
+      background: none;
+      box-shadow: none;
+    }
+  }
+
   .sky-item{
     background-color: #8FE7F5;
     color: #415C6D;
@@ -199,4 +244,6 @@
   padding-top: 60px;
   margin-bottom: 400px;
   background-color: #28ABE3;
+  font-family: "Nexa Light", Verdana, Tahoma;
 }
+

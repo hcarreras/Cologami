@@ -26,5 +26,6 @@ module Harigami
     I18n.reload!
     config.i18n.reload!
     config.stripe.publishable_key = 'pk_test_hWZbzksmcQcpiHrHYmOKzjHi'
+    config.assets.precompile = config.assets.precompile + %w(*.png *.jpg *.jpeg *.gif *.woff *.ttf *.svg *.eot)
   end
 end

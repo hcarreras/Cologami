@@ -1,8 +1,21 @@
 - content_for :body do
+  = image_tag("harigami-logo-m-min.png", class: "logo align-center img-responsive")
   h1= t('mailer.purchase_mailer.send_confirmation.header')
   h3= t('mailer.purchase_mailer.send_confirmation.header3')
-  p= t('mailer.purchase_mailer.send_confirmation.paragraph')
-  p= t('mailer.purchase_mailer.send_confirmation.paragraph2')
-  p= t('mailer.purchase_mailer.send_confirmation.greetings')
+  .text-body
+    p= t('mailer.purchase_mailer.send_confirmation.paragraph')
+    p= t('mailer.purchase_mailer.send_confirmation.paragraph2')
+    table style="width:100%"
+      - @purchase.line_items.each do |li|
+        tr
+          td= line_item_pretty_title(li)
+          td style="text-align: right"= number_to_currency li.price
+      tr
+        td
+        td style="text-align: right"
+          b= t("purchase.free_shipping_cost")
+
+    p= t('mailer.purchase_mailer.send_confirmation.greetings')
+
 
 = render "layouts/mail_template"

@@ -3,6 +3,9 @@ head
 css:
   body {
     background-color: #ddf0e6;
+    color: #697d71;
+    font-family: Merriweather, Georgia, serif;
+    font-size: 17px;
   }
   .mail-body{
     width: 600px;
@@ -11,26 +14,40 @@ css:
     margin-top: 30px;
     background-color: white;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 30px;
     font-family: "Open Sans",sans-serif;
 
+  }
+
+  .text-body{
+    margin-top: 45px;
   }
 
   h1 {
     color: #47805e;
     text-align: center;
+    margin-bottom: 10px;
   }
 
   h3 {
+    margin: 0;
     text-align: center;
     color: #d1e9dc;
   }
   p{
-    color: #697d71;
-    font-family: Merriweather,Georgia,serif;
-    font-size: 17px;
     line-height: 23px
   }
+
+  .logo {
+    width: 200px;
+  }
+
+  .align-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
 body
   .mail-body
     == yield :body

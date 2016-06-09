@@ -78,4 +78,7 @@ Harigami::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.stripe.publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
+
+  config.action_mailer.default_url_options = { :host => 'http://www.cologami.com' }
+  config.action_mailer.asset_host = 'http://www.cologami.com'
 end

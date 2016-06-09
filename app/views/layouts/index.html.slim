@@ -11,9 +11,9 @@ html
           .container-fluid.navbar-collapse
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
-                li= link_to(fa_icon("user", class: "logged fa-2x"), destroy_user_session_path, method: :delete)
+                li= link_to("Cerrar sesión",  destroy_user_session_path, method: :delete)
               - else
-                li= link_to(fa_icon("user", class: "fa-2x"), new_user_session_path)
+                li= link_to("Iniciar sesión", new_user_session_path)
       .body-index
         = yield
     footer.footer

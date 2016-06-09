@@ -10,7 +10,7 @@
                 .col-sm-2.vcenter
                   //=image_tag line_item.shape.images.first.file_url(:thumb)
                 .col-sm-2.vcenter
-                  = "Pack #{line_item.quantity} #{line_item.shape.title.pluralize(line_item.quantity)}"
+                  = line_item_pretty_title(line_item)
                 .col-sm-2.vcenter
                   = number_to_currency line_item.price
 

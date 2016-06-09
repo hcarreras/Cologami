@@ -2,6 +2,7 @@ class Purchase < ActiveRecord::Base
   belongs_to :cart
   belongs_to :user
   validates :cart, :user, :customer_name, :address_street, :address_zip, :address_city, :address_country, presence: true
+  has_many :line_items, through: :cart
 
   scope :paid, -> { where(status:"paid") }
 

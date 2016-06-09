@@ -1,5 +1,6 @@
 class PurchaseMailer < ActionMailer::Base
   default from: FROM_EMAIL
+  helper LineItemHelper
 
   def send_confirmation(purchase)
     @purchase = purchase

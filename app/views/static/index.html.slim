@@ -16,6 +16,54 @@
             span Descubre nuestras grullas
             div
               span.glyphicon.glyphicon-chevron-down aria-hidden="true"
+  .instructions-item
+    .content-body
+      .row
+        .col-sm-6
+          .row
+            .col-xs-2.icon-wrapper
+              = image_tag("icons/what-is-it.png", class: "icon")
+            .col-xs-9
+              b= "Qué es: "
+              | Cologami son plantillas con diseños coloridos para papiroflexia. Hay 5 modelos disponibles para montar vistosas grullas de origami. Cada una tiene su propia historia y personalidad. A continuación, las podrás conocer.
+        .col-sm-6
+          .row
+            .col-xs-2.icon-wrapper
+              = image_tag("icons/instructions.png", class: "icon")
+            .col-xs-9
+              b= "Monta tu plantilla: "
+              | El pack incluye instrucciones impresas para montar las figuras paso a paso. También puedes consultar nuestro video-tutorial aquí.
+      .row
+        .col-sm-6
+          .row
+            .col-xs-2.icon-wrapper
+              = image_tag("icons/select-pack.png", class: "icon")
+            .col-xs-9
+              b= "Selecciona tu pack y haz el pedido: "
+              | Los packs incluyen una o varias plantillas de cada modelo de grulla para que las pruebes todas. Por ejemplo, un pack de 10 incluirá 2 plantillas de cada modelo diferente. Las plantillas están impresas en papel origami A3 y recortadas a medida 20x20 cm.
+        .col-sm-6
+          .row
+            .col-xs-2.icon-wrapper
+              = image_tag("icons/fun.png", class: "icon")
+            .col-xs-9
+              b= "Diviértete: "
+              | El origami es una afición para todo el mundo. Si no lo has probado nunca, anímate a intentarlo. Es muy divertido para pasar un rato en familia o con tus amigos. Es educativo para los más pequeños
+      .row
+        .col-sm-6
+          .row
+            .col-xs-2.icon-wrapper
+              = image_tag("icons/delivery.png", class: "icon")
+            .col-xs-9
+              b= "Te lo mandamos a casa: "
+              | Una vez que hayas hecho el pedido, te lo mandaremos a casas en unos días. El envío es gratuito.
+        .col-sm-6
+          .row
+            .col-xs-2.icon-wrapper
+              = image_tag("icons/share.png", class: "icon")
+            .col-xs-9
+              b= "Comparte tus fotos: "
+              | En Cologami, valoramos la creatividad. Comparte las fotos de tus grullas en Instagram o Facebook y enséñanos tu lado más creativo con nuevas formas de usar las figuras.
+
   - @designs.each do |design|
     div class=(design_color(design) + " shape-container")
       .row.item-row

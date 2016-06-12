@@ -2,8 +2,7 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 @import "font-awesome";
-@import "buttons";
-@import "fonts";
+@import "utilities/*";
 @import "index";
 @import "purchase";
 
@@ -15,7 +14,7 @@ html {
   max-width: 1040px;
 }
 
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5, b{
   font-family: "Nexa Bold", Verdana, Tahoma;
 }
 
@@ -24,8 +23,9 @@ body{
   margin:0;
   padding:0;
   height:100%;
-  font-size: 15px;
+  font-size: 16px;
   min-height: 100%;
+
 }
 
 .body{
@@ -33,7 +33,7 @@ body{
 }
 
 .footer{
-  background-image: image-url("footer.jpg");
+  background-image: image-url("footer.png");
   background-size: cover;
   background-position: bottom right;
   position: absolute;
@@ -41,7 +41,7 @@ body{
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 400px;
-  background-color: #f5f5f5;
+  background-color: #8fe7f5;
 
   a{
     color:#009633;

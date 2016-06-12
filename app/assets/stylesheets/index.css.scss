@@ -120,6 +120,20 @@
     }
   }
 
+  .instructions-item{
+    background-color: white;
+    padding-top: 10px;
+    color: #6d6d6d;
+    text-align: justify;
+    font-size: 16px;
+    .row{
+      margin-bottom: 25px;
+    }
+    .content-body{
+      padding: 80px;
+      padding-top: 40px;
+    }
+  }
   .purple-item{
     background-color: #6E9ECF;
     color: #4B6B8B;
@@ -200,9 +214,7 @@
   }
 
   .shape-container, .purchase-container{
-    height: 100vh;
     min-height: 650px;
-    max-height: 750px;
   }
 
   .purchase-container{
@@ -211,7 +223,7 @@
       margin-bottom: 35px;
     }
     .panel-item{
-      height: 544px;
+      min-height: 544px;
     }
     .item-row{
       padding-top: 79px;

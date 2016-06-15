@@ -15,7 +15,11 @@
       = f.label :description, class: 'control-label'
       .controls
         = f.text_area :description, class: 'form-control', rows: 3
-      = f.hidden_field :shape_id, class: 'text_field'
+    .form-group
+      = f.label :priority, class: 'control-label'
+      .controls
+        = f.text_field :priority, class: 'text_field'
+    = f.hidden_field :shape_id, class: 'text_field'
     = f.label :images, class: 'control-label'
     = f.fields_for :design_images do |p|
       .controls-group

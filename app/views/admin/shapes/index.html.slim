@@ -16,11 +16,12 @@ div class="page-header"
 
           - shape.designs.each do |design|
             tr
-              td= link_to design.title, design_path(design)
+              td= design.title
               td= design.description
               td
                 - design.images.each do |image|
                   = image_tag(image.file_url(:thumb))
+              td= design.priority
               td
                 = link_to 'Edit', edit_admin_design_path(design), :class => 'btn btn-mini'
                 '

@@ -25,9 +25,6 @@
       .controls-group
         .controls
           = p.file_field :file, multiple: true, name: "images[file][]"
-    = f.label :sheet, class: 'control-label'
-    = f.file_field :sheet
-
     .form-actions
       = f.submit "Save", class: 'btn btn-primary'
       '

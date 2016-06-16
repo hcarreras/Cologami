@@ -3,7 +3,6 @@ class Design < ActiveRecord::Base
   belongs_to :shape
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :shape
-  mount_uploader :sheet, SheetUploader
 
 
   validates_presence_of :title

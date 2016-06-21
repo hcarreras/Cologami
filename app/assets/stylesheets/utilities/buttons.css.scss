@@ -39,3 +39,14 @@
     }
   }
 }
+
+.btn {
+  &.btn-gray{
+    background-color: #4e4e4d;
+    border: 1px solid #444444;
+    &:hover, &:focus{
+      color: white;
+
+    }
+  }
+}

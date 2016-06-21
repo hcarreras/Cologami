@@ -19,14 +19,13 @@
     h2{
       color: #e4e4e4;
       text-shadow: 1px 1px #3a3838;
-      font-size: 25px;
-      letter-spacing: 3px;
+      font-size: 27px;
+      letter-spacing: 1px;
       font-family: "Nexa light";
-      padding: 0px 203px;
     }
     .header-body{
-      padding: 80px;
-      padding-top: 40px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       .discover-call-to-action{
         .glyphicon{
           font-size: 60px;
@@ -36,9 +35,20 @@
           margin-bottom: 10px;
         }
         margin-top: 20px;
-        letter-spacing: 7px;
+        letter-spacing: 4px;
         font-size: 18px;
       }
+      .panel-body{
+        padding-bottom: 0px;
+      }
+    }
+    .motto{
+      margin-top: 240px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 560px;
+      letter-spacing: 1px;
+      text-align: center;
     }
   }
 
@@ -64,7 +74,7 @@
     color: #146283;
 
     .panel{
-      background-color: #F7FCFD;
+      background-color: #f7f7f7;
 
       .item-text-wrapper {
         &:before {
@@ -84,7 +94,7 @@
     color: #852229;
 
     .panel{
-      background-color: #FFF8F8;
+      background-color: #f7f7f7;
 
       .item-text-wrapper {
         &:before {
@@ -105,7 +115,7 @@
 
 
     .panel{
-      background-color: #FFFFF8;
+      background-color: #f7f7f7;
 
       .item-text-wrapper {
         &:before {
@@ -140,7 +150,7 @@
     color: #4B6B8B;
 
     .panel{
-      background-color: #F7FBFF;
+      background-color: #f7f7f7;
 
       .item-text-wrapper {
         &:before {
@@ -160,7 +170,7 @@
     color: #A94430;
 
     .panel{
-      background-color: #FFF8F8;
+      background-color: #f7f7f7;
 
       .item-text-wrapper {
         &:before {
@@ -178,10 +188,12 @@
   .header-item {
     background: url("header.jpg");
     background-size: cover;
-    background-position: 50% 100%;
+    background-position: 50% 50%;
     .panel{
       background: none;
       box-shadow: none;
+    }
+    .text{
     }
   }
 
@@ -194,7 +206,7 @@
     }
 
     .panel{
-      background-color: #f0f9fb;
+      background-color: #f7f7f7;
 
       .item-text-wrapper {
         &:before {

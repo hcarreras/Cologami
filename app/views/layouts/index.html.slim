@@ -9,15 +9,15 @@ html
           .navbar-header
             = link_to(image_tag("harigami-logo-m-min.png", class: "logo img-responsive"), root_url)
           .container-fluid
-            ul.nav.navbar-nav
-              li.active
-                a#menu-init Inisio
+            ul.nav.navbar-nav#breadcrumbs
               li
-                a#menu-what-is-it Qué es?
+                a.active href="#inicio" Inisio
               li
-                a#menu-meet-our-heroes Conoce nuestras Grullas
+                a href="#instrucciones" Qué es?
               li
-                a#menu-buy-now Cómpralas ya!
+                a href="#heroes" Conoce nuestras Grullas
+              li
+                a href="#comprar" Cómpralas ya!
 
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?

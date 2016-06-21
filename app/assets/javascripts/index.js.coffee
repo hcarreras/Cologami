@@ -1,36 +1,38 @@
 jQuery ->
-  class index
-    $(document).on("scroll", @onScroll);
+  @topMenu = $(".navbar-top-index")
+  menuItems = $("#breadcrumbs li a")
 
-    $("#line_item_quantity").change ->
-      quantity = $("#line_item_quantity option:selected").attr("value");
-      $.ajax(url: "/shape_prices/1?quantity=#{quantity}")
-
-    $("#buy-now").click ->
+  $.each menuItems, (index, item) ->
+    $(item).removeClass("active")
+    $(item).on "click", (e) ->
+      e.preventDefault()
+      top = $($(item).attr("href")).offset().top
       $('html, body').animate(
-        scrollTop: $(".sky-item.purchase-container").offset().top
+        scrollTop: top - 35
       , 0)
 
-    $("#menu-init").click ->
-      $('html, body').animate(
-        scrollTop: $(".header-item.purchase-container").offset().top - 35
-      , 0)
+  window.onScroll = () ->
+    $.each menuItems, (index, item) ->
+      scrollPos = $(document).scrollTop()
+      refElement = $($(item).attr("href"))
 
-    $("#menu-what-is-it").click ->
-      $('html, body').animate(
-        scrollTop: $(".instructions-item").offset().top - 40
-      , 0)
+      if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() - 100 > scrollPos)
+        $(item).addClass("active")
+      else
+        $(item).removeClass("active")
 
-    $("#menu-meet-our-heroes").click ->
-      $('html, body').animate(
-        scrollTop: $("#cranes").offset().top - 35
-      , 0)
+  $(document).on("scroll", window.onScroll);
 
-    $("#menu-buy-now").click ->
-      $('html, body').animate(
-        scrollTop: $(".sky-item.purchase-container").offset().top
-      , 0)
+  $("#buy-now").click ->
+    $('html, body').animate(
+      scrollTop: $(".sky-item.purchase-container").offset().top
+    , 0)
 
-    @onScroll: () =>
-      alert("hello")
-      console.log "Scrolleando la siudad"
+  $("#line_item_quantity").change ->
+    quantity = $("#line_item_quantity option:selected").attr("value");
+    $.ajax(url: "/shape_prices/1?quantity=#{quantity}")
+
+
+  $('html, body').animate(
+    scrollTop: $("#index").offset().top - 100
+  , 0)

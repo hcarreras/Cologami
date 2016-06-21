@@ -121,8 +121,9 @@ hr{
 }
 
 .navbar{
-  .active{
-    a{
+  a.active{
+    color: red;
+    &:hover{
       color: red;
     }
   }

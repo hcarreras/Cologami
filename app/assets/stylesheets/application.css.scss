@@ -108,6 +108,7 @@ hr{
   margin-left: 3em;
   padding: 0.5em;
   width: 169px;
+  margin-right: 15px;
 }
 
 .cart{
@@ -117,6 +118,14 @@ hr{
 
 .navbar-right{
   margin-right: 30px;
+}
+
+.navbar{
+  .active{
+    a{
+      color: red;
+    }
+  }
 }
 
 .vcenter{

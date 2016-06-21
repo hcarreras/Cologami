@@ -8,7 +8,17 @@ html
         nav.navbar.navbar-top-index
           .navbar-header
             = link_to(image_tag("harigami-logo-m-min.png", class: "logo img-responsive"), root_url)
-          .container-fluid.navbar-collapse
+          .container-fluid
+            ul.nav.navbar-nav
+              li.active
+                a#menu-init Inisio
+              li
+                a#menu-what-is-it Qué es?
+              li
+                a#menu-meet-our-heroes Conoce nuestras Grullas
+              li
+                a#menu-buy-now Cómpralas ya!
+
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                 li= link_to("Cerrar sesión",  destroy_user_session_path, method: :delete)

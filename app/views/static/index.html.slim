@@ -66,21 +66,22 @@
               b= "Comparte tus fotos: "
               | En Cologami, valoramos la creatividad. Comparte las fotos de tus grullas en Instagram o Facebook y enséñanos tu lado más creativo con nuevas formas de usar las figuras.
 
-  - @designs.each do |design|
-    div class=(design_color(design) + " shape-container")
-      .row.item-row
-        .panel
-          .panel-default.panel-body.panel-item
-            .col-sm-12
-              .row.inside-row
-                .col-sm-6
-                  .image
-                    = image_tag(design.images.first.file_url, class:"img-responsive index-img")
-                .col-sm-6.item-text-wrapper
-                  h2
-                    = design.title
-                  .description
-                    p= design.description
+  #cranes
+    - @designs.each do |design|
+      div class=(design_color(design) + " shape-container")
+        .row.item-row
+          .panel
+            .panel-default.panel-body.panel-item
+              .col-sm-12
+                .row.inside-row
+                  .col-sm-6
+                    .image
+                      = image_tag(design.images.first.file_url, class:"img-responsive index-img")
+                  .col-sm-6.item-text-wrapper
+                    h2
+                      = design.title
+                    .description
+                      p= design.description
 
   .sky-item.purchase-container
     .row.item-row

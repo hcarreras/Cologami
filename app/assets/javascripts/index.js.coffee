@@ -36,3 +36,10 @@ jQuery ->
   $('html, body').animate(
     scrollTop: $("#index").offset().top - 100
   , 0)
+
+  $('.discover-call-to-action .glyphicon-chevron-down').click ->
+    console.log "Clong!"
+    $('html, body').animate(
+      scrollTop: $('.instructions-item').offset().top - 35
+    , 500)
+

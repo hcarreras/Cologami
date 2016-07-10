@@ -44,7 +44,7 @@ en:
     submit: "Next"
     success_payment: "You have successfully paid"
     error_after_charging_payment: "There was an error. Please contact us at contact@cologami.com and we'll solve it"
-    error_before_charging_payment: "We haven't charge your credit card but there was an error. Please try again."
+    error_before_charging_payment: "We haven't charged your credit card because there was an error. Please try again."
   mailer:
     purchase_mailer:
       send_confirmation:
@@ -54,3 +54,16 @@ en:
         paragraph: "Thanks for trusting in Cologami. Your Order is being processed and you will receive it in a few days."
         paragraph2: "Here you can find the details:"
         greetings: "Sincerely, The Cologami Team."
+  devise:
+    password: Password
+    password_confirmation: Confirm password
+    sign_in: Sign in
+    sign_up: Sign up
+    forgot_password: I forgot my password
+    retrieve_password: Send me an email
+    did_not_receive_confirmation: Didn't receive confirmation instructions?
+    did_not_receive_unlock: Didn't receive unlock instructions?
+    confirm_account: Confirm my account
+    confirm_mail_line_1: "Welcome %{email}"
+    confirm_mail_line_2: "You can confirm your account email through the link below:"
+    confirm_mail_line_link: Confirm my account

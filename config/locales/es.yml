@@ -111,3 +111,18 @@ es:
         paragraph: "Gracias por confiar en Cologami. Estamos procesando tu pedido y te llegará en unos dias."
         paragraph2: "Los detalles de su pedido van a continuación:"
         greetings: "Atentamente, El Equipo de Cologami."
+
+  devise:
+    password: Contraseña
+    password_confirmation: Confirma contraseña
+    sign_in: Inicia sesión
+    sign_up: Regístrate
+    forgot_password: He olvidado la contraseña
+    retrieve_password: Recuperar contraseña
+    did_not_receive_confirmation: No he recibido la confirmación
+    did_not_receive_unlock: No he recibido el email de desbloqueo
+    confirm_account: Confirmar cuenta
+    confirm_mail_line_1: "Bienvenido %{email}"
+    confirm_mail_line_2: Puedes confirmar tu cuenta pulsando el siguiente enlace
+    confirm_mail_link: Confirmar mi cuenta
+

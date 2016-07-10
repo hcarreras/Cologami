@@ -7,7 +7,7 @@
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-vertical" }) do |f|
           .form-group
             = f.input :email, required: false, autofocus: true
-            = f.input :password, required: false, label: "Contraseña"
+            = f.input :password, required: false, label: t("devise.password")
             = f.input :remember_me, as: :boolean, label: "Recuerdame" if devise_mapping.rememberable?
 
           .row
@@ -27,8 +27,8 @@
 
           .form-group
             = f.input :email, autofocus: true
-            = f.input :password, label: "Contraseña"
-            = f.input :password_confirmation, label: "Confirma contraseña"
+            = f.input :password, label: t("devise.password")
+            = f.input :password_confirmation, label: t("devise.password_confirmation")
 
           .form-actions
             = f.button :submit, "Registrarme"

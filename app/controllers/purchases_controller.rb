@@ -36,6 +36,7 @@ class PurchasesController < InheritedResources::Base
 
       if payment.present? && payment.paid == true
         if @purchase.update_payment(payment)
+          PurchaseMailer.send_confirmation(@purchase).deliver_later
           flash.now[:notice] = t("purchase.success_payment")
           redirect_to static_url("thanks")
         else

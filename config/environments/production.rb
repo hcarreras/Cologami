@@ -81,6 +81,4 @@ Harigami::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'http://www.cologami.com' }
   config.action_mailer.asset_host = 'http://www.cologami.com'
-
-  config.serve_static_assets = true
 end

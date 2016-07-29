@@ -2,6 +2,7 @@ Harigami::Application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   get "/admin" => "admin/shapes#index"
   get "/account" => "users#show"
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
   namespace :admin do
     resources :designs, except: [:index, :show]
@@ -16,6 +17,6 @@ Harigami::Application.routes.draw do
 
 
   root to: "static#index"
-
+  
   get '/:id' => 'static#show'
 end

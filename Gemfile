@@ -46,6 +46,8 @@ gem "fog-aws"
 gem 'stripe-rails'
 gem 'money-rails'
 gem 'active_model_serializers'
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

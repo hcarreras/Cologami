@@ -27,5 +27,6 @@ module Harigami
     config.i18n.reload!
     config.stripe.publishable_key = 'pk_test_hWZbzksmcQcpiHrHYmOKzjHi'
     config.assets.precompile = config.assets.precompile + %w(*.png *.jpg *.jpeg *.gif *.woff *.ttf *.svg *.eot)
+    config.active_job.queue_adapter = :delayed_job
   end
 end

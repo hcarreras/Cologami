@@ -3,14 +3,6 @@ require 'spec_helper'
 feature 'purchase' do
   given!(:design) { create :design, :with_image}
   feature 'proceed to checkout' do
-    feature "requires an user" do
-      scenario "there is no user" do
-        visit root_url
-        click_on I18n.t("index.buy.add_to_cart_button")
-        expect(page).to have_content "Sign in"
-        expect(page).to have_content "Registrate"
-      end
-    end
     feature "requires to have a cart with line items" do
       scenario "there are no items added to the cart" do
         visit new_purchase_path

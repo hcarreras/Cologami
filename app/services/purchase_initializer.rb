@@ -7,6 +7,8 @@ class PurchaseInitializer
   end
 
   def initialize_with_last_purchase_data
+    return unless user.present?
+
     if last_purchase = user.purchases.last
       purchase.customer_name = last_purchase.customer_name
       purchase.customer_phone_number = last_purchase.customer_phone_number

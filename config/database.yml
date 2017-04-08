@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: db/cologami_development
+  database: cologami_development
   pool: 5
   timeout: 5000
 
@@ -16,7 +16,7 @@ development:
 test: &TEST
   adapter: postgresql
   encoding: utf8
-  database: db/cologami_test
+  database: cologami_test
   pool: 5
   timeout: 5000
 

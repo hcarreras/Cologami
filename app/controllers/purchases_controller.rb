@@ -3,7 +3,6 @@ class PurchasesController < InheritedResources::Base
 
   def new
     redirect_to(root_path, notice: "Ups! Parece que no hay ningún diseño en el carrito, prueba a añadir alguno.") and return if current_cart.line_items.empty?
-    redirect_to new_user_session_path and return unless current_user
     @purchase = PurchaseInitializer.new(user: current_user).initialize_with_last_purchase_data
     new!
   end
@@ -25,7 +24,7 @@ class PurchasesController < InheritedResources::Base
             description: "Harigami - PurchaseID: #{ @purchase.id }",
             metadata: {
                 "purchase_id"     => "#{ @purchase.id }",
-                "user_id"     => "#{ current_user.id }",
+                "user_id"     => "#{ current_user&.id }",
                 "time"        => "#{ Time.now.to_i }",
             }
         )

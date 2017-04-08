@@ -25,9 +25,9 @@ RSpec.describe PurchasesController, type: :controller do
           set_current_cart create(:cart_with_design)
         end
 
-        it "redirects to login" do
+        it "renders new" do
           subject
-          expect(response).to redirect_to(new_user_session_path)
+          expect(response).to render_template(:new)
         end
       end
 

@@ -57,7 +57,7 @@ es:
       description_1: Consigue ahora tu pack de grullas Cologami.
       description_2: Cada pack incluye plantillas para todos los modelos de grullas junto con instrucciones impresas de doblado.
       description_3: Tanto el papel, como la impresión, son de máxima calidad para que tus figuras de origami queden perfectas.
-      contact_us_1: Si quieres hacer un pedido grande, ponte en contacto con nosotros escribiendo a contacto@cologami.com
+      contact_us_1: Si quieres hacer un pedido grande, ponte en contacto con nosotros escribiendo a cologami@gmail.com
       add_to_cart_button: "Comprar Ahora"
   purchase:
     free_shipping_cost: "Gastos de envío: Gratis"
@@ -74,7 +74,7 @@ es:
     address_country: "País"
     submit: "Continuar"
     success_payment: "Has pagado correctamente"
-    error_after_charging_payment: "Ha habido un error. Por favor mandanos un email a contacto@cologami.com y lo solucionaremos."
+    error_after_charging_payment: "Ha habido un error. Por favor mandanos un email a cologami@gmail.com y lo solucionaremos."
     error_before_charging_payment: "No te preocupes, no te hemos cobrado nada, pero ha habido un error. Por favor, intentalo de nuevo."
   flash:
     line_items:
